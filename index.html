@@ -8,8 +8,117 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <style>
+      .prose-diff>.markdown-body .github-user-ins {
+    text-decoration: underline
+}
+
+.prose-diff>.markdown-body .github-user-del {
+    text-decoration: line-through
+}
+
+.prose-diff>.markdown-body li ul.added {
+    background: #eaffea
+}
+
+.prose-diff>.markdown-body li ul.removed {
+    color: #a33;
+    background: #ffeaea
+}
+
+.prose-diff>.markdown-body li ul.removed:not(.github-user-ins) {
+    text-decoration: line-through
+}
+
+.prose-diff>.markdown-body li.added.moved-up:before {
+    font-family: "octicons";
+    content: "\f03d ";
+    color: #d3d3d3
+}
+
+.prose-diff>.markdown-body li.added.moved-down:before {
+    font-family: "octicons";
+    content: "\f03f ";
+    color: #d3d3d3
+}
+
+.prose-diff>.markdown-body li.added.moved {
+    background: #ffffea
+}
+
+.prose-diff>.markdown-body li.removed.moved {
+    display: none
+}
+
+.prose-diff>.markdown-body pre {
+    padding: 10px 20px
+}
+
+.prose-diff>.markdown-body th.changed,.prose-diff>.markdown-body td.changed {
+    border-left-color: #ddd;
+    background: #ffffea
+}
+
+.prose-diff>.markdown-body :not(li.moved).removed {
+    color: #a33;
+    text-decoration: line-through;
+    background: #ffeaea
+}
+
+.prose-diff>.markdown-body :not(.github-user-ins):not(li.moved).removed {
+    text-decoration: line-through
+}
+
+.prose-diff>.markdown-body :not(li.moved).added,.prose-diff>.markdown-body li:not(.moved).added {
+    background: #eaffea
+}
+
+.prose-diff>.markdown-body :not(.github-user-del):not(li.moved).added li:not(.moved):not(.github-user-del).added {
+    text-decoration: none
+}
+
+.prose-diff>.markdown-body li:not(.moved).removed {
+    color: #a33;
+    background: #ffeaea
+}
+
+.prose-diff>.markdown-body li:not(.moved):not(.github-user-ins).removed {
+    text-decoration: line-through
+}
+
+.prose-diff>.markdown-body .added,.prose-diff>.markdown-body ins+.added,.prose-diff>.markdown-body ins {
+    border-bottom: 0;
+    border-top: 0
+}
+
+.prose-diff>.markdown-body .added:not(.github-user-del):not(.github-user-ins),.prose-diff>.markdown-body ins+.added:not(.github-user-del):not(.github-user-ins),.prose-diff>.markdown-body ins:not(.github-user-del):not(.github-user-ins) {
+    text-decoration: none
+}
+
+.prose-diff>.markdown-body img.added,.prose-diff>.markdown-body img.removed {
+    border-width: 1px;
+    border-style: solid
+}
+
+.prose-diff>.markdown-body ins pre:not(.github-user-del):not(.github-user-ins),.prose-diff>.markdown-body ins code:not(.github-user-del):not(.github-user-ins),.prose-diff>.markdown-body ins>div:not(.github-user-del):not(.github-user-ins) {
+    text-decoration: none
+}
+
+.prose-diff>.markdown-body ul>ins,.prose-diff>.markdown-body ul>del {
+    display: block;
+    padding: 0
+}
+
+.prose-diff>.markdown-body .added>li,.prose-diff>.markdown-body .removed>li {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+    </style>
   </head>
   <body>
+  
+    <div class="prose-diff">
     <div class="markdown-body" style="margin-left: 150px;">
       <h2>
 <a id="user-content-classes" class="anchor" href="#classes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Classes</h2>
@@ -5447,7 +5556,7 @@ wa.<span class="pl-c1">createGroup</span>(<span class="pl-s"><span class="pl-pds
 </tbody>
 </table>
 
-    </div>
+    </div></div>
 
   
   </body>
