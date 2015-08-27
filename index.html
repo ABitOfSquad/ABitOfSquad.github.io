@@ -10,44 +10,5444 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <section class="page-header">
-      <h1 class="project-name">Squadbot-docs</h1>
-      <h2 class="project-tagline">Plugin Documentation (soon to be a github page)</h2>
-      <a href="https://github.com/ABitOfSquad/squadbot-docs" class="btn">View on GitHub</a>
-      <a href="https://github.com/ABitOfSquad/squadbot-docs/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/ABitOfSquad/squadbot-docs/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+    <div class="markdown-body">
+      <h2>
+<a id="user-content-classes" class="anchor" href="#classes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Classes</h2>
 
-    <section class="main-content">
-      <h3>
-<a id="squadbot" class="anchor" href="#squadbot" aria-hidden="true"><span class="octicon octicon-link"></span></a>Squadbot</h3>
+<dl>
+<dt><a href="#Buffer">Buffer</a></dt>
+<dd></dd>
+<dt><a href="#Node">Node</a></dt>
+<dd></dd>
+<dt><a href="#Reader">Reader</a></dt>
+<dd></dd>
+<dt><a href="#Writer">Writer</a></dt>
+<dd></dd>
+<dt><a href="#WhatsApi">WhatsApi</a></dt>
+<dd></dd>
+<dt>
+<a href="#WhatsApiDebug">WhatsApiDebug</a> ⇐ <code><a href="#WhatsApi">WhatsApi</a></code>
+</dt>
+<dd></dd>
+</dl>
 
-<p>Squadbot is a modular whatsapp bot completely written in Node.js. </p>
+<h2>
+<a id="user-content-functions" class="anchor" href="#functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions</h2>
+
+<dl>
+<dt>
+<a href="#createAdapter">createAdapter(config, debug, reader, writer, processor, transport)</a> ⇒ <code><a href="#WhatsApi">WhatsApi</a></code>
+</dt>
+<dd>
+<p>Create a new instance of the WhatsApi class</p>
+</dd>
+</dl>
+
+<h2>
+<a id="user-content-events" class="anchor" href="#events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events</h2>
+
+<dl>
+<dt><a href="#event_receivedMessage">"receivedMessage"</a></dt>
+<dd>
+<p>receivedMessage - emitted when a new text message is received</p>
+</dd>
+<dt><a href="#event_receivedLocation">"receivedLocation"</a></dt>
+<dd>
+<p>receivedLocation - emitted when a location message is received</p>
+</dd>
+<dt><a href="#event_receivedImage">"receivedImage"</a></dt>
+<dd>
+<p>Is fired when an image is received</p>
+</dd>
+<dt><a href="#event_receivedVideo">"receivedVideo"</a></dt>
+<dd>
+<p>Is fired when a video is received</p>
+</dd>
+<dt><a href="#event_receivedAudio">"receivedAudio"</a></dt>
+<dd>
+<p>Is fired when an audio file is received</p>
+</dd>
+<dt><a href="#event_receivedVcard">"receivedVcard"</a></dt>
+<dd>
+<p>Is fired when a vCard file is received</p>
+</dd>
+<dt><a href="#event_clientReceived">"clientReceived" (args)</a></dt>
+<dd>
+<p>Emitted when a client received your message</p>
+</dd>
+<dt><a href="#event_offlineCount">"offlineCount" (count)</a></dt>
+<dd>
+<p>Emitted when the count of messages received while offline is received</p>
+</dd>
+<dt><a href="#event_presence">"presence" (presence)</a></dt>
+<dd>
+<p>Emitted when a presence update node is received</p>
+</dd>
+<dt><a href="#event_typing">"typing" (type, from, author)</a></dt>
+<dd>
+<p>Emitted when a contact is writing or stopped writing a message</p>
+</dd>
+<dt><a href="#event_notificationStatusUpdated">"notificationStatusUpdated" (notification, nodeId)</a></dt>
+<dd>
+<p>Fired when a contact's status has changed</p>
+</dd>
+<dt><a href="#event_notificationPictureUpdated">"notificationPictureUpdated" (notification, nodeId)</a></dt>
+<dd>
+<p>Fired when a contact's profile picture has changed</p>
+</dd>
+<dt><a href="#event_notificationGroupCreated">"notificationGroupCreated" (group, id)</a></dt>
+<dd>
+<p>Fired when a new group has been created</p>
+</dd>
+<dt><a href="#event_notificationGroupParticipantsChanged">"notificationGroupParticipantsChanged" (args, id)</a></dt>
+<dd>
+<p>Fired when a notification about participants is received</p>
+</dd>
+<dt><a href="#event_notificationGroupSubjectChanged">"notificationGroupSubjectChanged" (args, id)</a></dt>
+<dd>
+<p>Fired when group subject has changed</p>
+</dd>
+</dl>
+
+<h2>
+<a id="user-content-typedefs" class="anchor" href="#typedefs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Typedefs</h2>
+
+<dl>
+<dt>
+<a href="#Message">Message</a> : <code>Object</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#Location">Location</a> : <code>Object</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#Image">Image</a> : <code>Object</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#Video">Video</a> : <code>Object</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#Audio">Audio</a> : <code>Object</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#Vcard">Vcard</a> : <code>Object</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#WhatsApiConfig">WhatsApiConfig</a> : <code>Object</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#ResponseError">ResponseError</a> : <code>Object</code>
+</dt>
+<dd>
+<p>Response error; 'null' means success</p>
+</dd>
+<dt>
+<a href="#Group">Group</a> : <code>Object</code>
+</dt>
+<dd>
+<p>Group object</p>
+</dd>
+<dt>
+<a href="#ParticipantsChanged">ParticipantsChanged</a> : <code>Object</code>
+</dt>
+<dd>
+<p>Information about a change in group participants</p>
+</dd>
+<dt>
+<a href="#Participant">Participant</a> : <code>Object</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#ClientReceived">ClientReceived</a> : <code>Object</code>
+</dt>
+<dd>
+<p>Client received the message (receipt)</p>
+</dd>
+<dt>
+<a href="#LastSeenCallback">LastSeenCallback</a> : <code>function</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#LastSeen">LastSeen</a> : <code>Object</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#GroupsListCallback">GroupsListCallback</a> : <code>function</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#GroupInfoCallback">GroupInfoCallback</a> : <code>function</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#GroupCreatedCallback">GroupCreatedCallback</a> : <code>function</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#GroupParticipantsCallback">GroupParticipantsCallback</a> : <code>function</code>
+</dt>
+<dd></dd>
+<dt><a href="#GroupParticipantChange">GroupParticipantChange</a></dt>
+<dd></dd>
+<dt>
+<a href="#GroupLeaveCallback">GroupLeaveCallback</a> : <code>function</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#GroupSubjectCallback">GroupSubjectCallback</a> : <code>function</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#ProfilePictureCallback">ProfilePictureCallback</a> : <code>function</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#ProfilePicture">ProfilePicture</a> : <code>Object</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#StatusCallback">StatusCallback</a> : <code>function</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#Status">Status</a> : <code>Object</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#SyncCallback">SyncCallback</a> : <code>function</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#ContactsSync">ContactsSync</a> : <code>Object</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#PricingCallback">PricingCallback</a> : <code>function</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#ServicePricing">ServicePricing</a> : <code>Object</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#StatusUpdated">StatusUpdated</a> : <code>Object</code>
+</dt>
+<dd></dd>
+<dt>
+<a href="#PictureUpdated">PictureUpdated</a> : <code>Object</code>
+</dt>
+<dd></dd>
+</dl>
+
+<p><a name="user-content-Buffer"></a></p>
+
+<h2>
+<a id="user-content-buffer" class="anchor" href="#buffer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Buffer</h2>
+
+<p><strong>Kind</strong>: global class<br>
+<a name="user-content-Buffer.concat"></a></p>
 
 <h3>
-<a id="plugin-docs" class="anchor" href="#plugin-docs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plugin Docs</h3>
+<a id="user-content-bufferconcatbuffers-len--buffer" class="anchor" href="#bufferconcatbuffers-len--buffer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Buffer.concat(buffers, len) ⇒ <code><a href="#Buffer">Buffer</a></code>
+</h3>
 
-<p>Coming Soon!</p>
+<p><strong>Kind</strong>: static method of <code><a href="#Buffer">Buffer</a></code><br>
+<strong>Returns</strong>: <code><a href="#Buffer">Buffer</a></code> - - New buffer  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buffers</td>
+<td><code>array</code></td>
+<td>Array of buffers to concatenate</td>
+</tr>
+<tr>
+<td>len</td>
+<td><code>integer</code></td>
+<td>(optional) length of the buffer</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-Node"></a></p>
+
+<h2>
+<a id="user-content-node" class="anchor" href="#node" aria-hidden="true"><span class="octicon octicon-link"></span></a>Node</h2>
+
+<p><strong>Kind</strong>: global class<br>
+<a name="user-content-new_Node_new"></a></p>
 
 <h3>
-<a id="legal" class="anchor" href="#legal" aria-hidden="true"><span class="octicon octicon-link"></span></a>Legal</h3>
+<a id="user-content-new-nodetag-attributes-children-data" class="anchor" href="#new-nodetag-attributes-children-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>new Node(tag, attributes, children, data)</h3>
 
-<p>Using whatsapp sockets is forbidden by their EULA. Squadbot has been created with the aim to learn more about bots, Reverse engineering and AI,
-this means this repository can never be used for either commercial purposes, or educational purposes on a larger scale. For
-these purposes you should consider using other protocols such as Telegram and IRC.</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tag</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>attributes</td>
+<td><code>array</code></td>
+</tr>
+<tr>
+<td>children</td>
+<td><code>array</code></td>
+</tr>
+<tr>
+<td>data</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
 
-<p>As stated in our License, we do not give any warranty, the Software and its source code is provided "AS IS".
-Our license only includes our own code, the whatsapp code, logos and styles are copyrighted by Whatsapp inc.</p>
+<p><a name="user-content-Reader"></a></p>
 
-<p>We are not in any way associated with Whatsapp Inc. nor Facebook Inc. This isn't an official API!</p>
+<h2>
+<a id="user-content-reader" class="anchor" href="#reader" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reader</h2>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/ABitOfSquad/squadbot-docs">Squadbot-docs</a> is maintained by <a href="https://github.com/ABitOfSquad">ABitOfSquad</a>.</span>
+<p><strong>Kind</strong>: global class<br>
+<a name="user-content-new_Reader_new"></a></p>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+<h3>
+<a id="user-content-new-readerdictionary" class="anchor" href="#new-readerdictionary" aria-hidden="true"><span class="octicon octicon-link"></span></a>new Reader(dictionary)</h3>
 
-    </section>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dictionary</td>
+<td><code>dictionary</code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-Writer"></a></p>
+
+<h2>
+<a id="user-content-writer" class="anchor" href="#writer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Writer</h2>
+
+<p><strong>Kind</strong>: global class<br>
+<a name="user-content-new_Writer_new"></a></p>
+
+<h3>
+<a id="user-content-new-writerdictionary" class="anchor" href="#new-writerdictionary" aria-hidden="true"><span class="octicon octicon-link"></span></a>new Writer(dictionary)</h3>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dictionary</td>
+<td><code>dictionary</code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi"></a></p>
+
+<h2>
+<a id="user-content-whatsapi" class="anchor" href="#whatsapi" aria-hidden="true"><span class="octicon octicon-link"></span></a>WhatsApi</h2>
+
+<p><strong>Kind</strong>: global class  </p>
+
+<ul>
+<li>
+<a href="#WhatsApi">WhatsApi</a>
+
+<ul>
+<li><a href="#new_WhatsApi_new">new WhatsApi(config, reader, writer, processor, transport)</a></li>
+<li>
+<a href="#WhatsApi#defaultConfig">.defaultConfig</a> : <code><a href="#WhatsApiConfig">WhatsApiConfig</a></code>
+</li>
+<li><a href="#WhatsApi#init">.init()</a></li>
+<li><a href="#WhatsApi#addCallback">.addCallback(id, cb)</a></li>
+<li><a href="#WhatsApi#executeCallback">.executeCallback(id, args)</a></li>
+<li><a href="#WhatsApi#connect">.connect(callback)</a></li>
+<li><a href="#WhatsApi#disconnect">.disconnect()</a></li>
+<li><a href="#WhatsApi#login">.login(callback)</a></li>
+<li>
+<a href="#WhatsApi#nextMessageId">.nextMessageId(prefix)</a> ⇒ <code>String</code>
+</li>
+<li>
+<a href="#WhatsApi#createJID">.createJID(msisdn)</a> ⇒ <code>String</code>
+</li>
+<li><a href="#WhatsApi#requestContactsSync">.requestContactsSync(contacts, mode, context, callback)</a></li>
+<li><a href="#WhatsApi#setPrivacySettings">.setPrivacySettings(name, value)</a></li>
+<li><a href="#WhatsApi#requestPrivacySettings">.requestPrivacySettings()</a></li>
+<li><a href="#WhatsApi#setStatus">.setStatus(status, callback)</a></li>
+<li><a href="#WhatsApi#getStatus">.getStatus(number, callback)</a></li>
+<li><a href="#WhatsApi#getStatuses">.getStatuses(numbers, callback)</a></li>
+<li><a href="#WhatsApi#requestLastSeen">.requestLastSeen(who, callback)</a></li>
+<li><a href="#WhatsApi#setProfilePicture">.setProfilePicture(filepath)</a></li>
+<li><a href="#WhatsApi#getProfilePicture">.getProfilePicture(target, small, callback)</a></li>
+<li><a href="#WhatsApi#requestExtendAccount">.requestExtendAccount()</a></li>
+<li><a href="#WhatsApi#sendIsOnline">.sendIsOnline()</a></li>
+<li><a href="#WhatsApi#sendIsOffline">.sendIsOffline()</a></li>
+<li><a href="#WhatsApi#sendComposingState">.sendComposingState(to)</a></li>
+<li><a href="#WhatsApi#sendPausedState">.sendPausedState(to)</a></li>
+<li><a href="#WhatsApi#sendPresenceSubscription">.sendPresenceSubscription(who)</a></li>
+<li><a href="#WhatsApi#sendPresenceUnsubscription">.sendPresenceUnsubscription(who)</a></li>
+<li><a href="#WhatsApi#requestGroupsList">.requestGroupsList(type, callback)</a></li>
+<li><a href="#WhatsApi#requestGroupInfo">.requestGroupInfo(groupId, callback)</a></li>
+<li><a href="#WhatsApi#createGroup">.createGroup(subject, numbers, callback)</a></li>
+<li><a href="#WhatsApi#addGroupParticipants">.addGroupParticipants(groupId, numbers, callback)</a></li>
+<li><a href="#WhatsApi#removeGroupParticipants">.removeGroupParticipants(groupId, numbers, callback)</a></li>
+<li><a href="#WhatsApi#promoteGroupParticipants">.promoteGroupParticipants(groupId, numbers, callback)</a></li>
+<li><a href="#WhatsApi#demoteGroupParticipants">.demoteGroupParticipants(groupId, numbers, callback)</a></li>
+<li><a href="#WhatsApi#requestGroupsLeave">.requestGroupsLeave(groupIds, callback)</a></li>
+<li><a href="#WhatsApi#requestGroupLeave">.requestGroupLeave(groupId, callback)</a></li>
+<li><a href="#WhatsApi#setGroupSubject">.setGroupSubject(groupId, subject, callback)</a></li>
+<li><a href="#WhatsApi#sendMessage">.sendMessage(to, message, msgid, callback)</a></li>
+<li><a href="#WhatsApi#sendLocation">.sendLocation(to, lat, lng, name, url, msgid, callback)</a></li>
+<li><a href="#WhatsApi#sendImage">.sendImage(to, filepath, caption, msgid, callback)</a></li>
+<li><a href="#WhatsApi#sendVideo">.sendVideo(to, filepath, caption, msgid, callback)</a></li>
+<li><a href="#WhatsApi#sendAudio">.sendAudio(to, filepath, msgid, callback)</a></li>
+<li><a href="#WhatsApi#sendVcard">.sendVcard(to, filepath, name, msgid, callback)</a></li>
+<li><a href="#WhatsApi#JIDtoId">.JIDtoId(jid)</a></li>
+<li>
+<a href="#WhatsApi#createPongNode">.createPongNode(messageId)</a> ⇒ <code><a href="#Node">Node</a></code>
+</li>
+<li><a href="#WhatsApi#sendMessageReceipt">.sendMessageReceipt(message, type)</a></li>
+<li>
+<a href="#WhatsApi#createAckNode">.createAckNode(node)</a> ⇒ <code><a href="#Node">Node</a></code>
+</li>
+<li><a href="#WhatsApi#requestServerProperties">.requestServerProperties(callback)</a></li>
+<li><a href="#WhatsApi#requestServicePricing">.requestServicePricing(language, country, callback)</a></li>
+</ul>
+</li>
+</ul>
+
+<p><a name="user-content-new_WhatsApi_new"></a></p>
+
+<h3>
+<a id="user-content-new-whatsapiconfig-reader-writer-processor-transport" class="anchor" href="#new-whatsapiconfig-reader-writer-processor-transport" aria-hidden="true"><span class="octicon octicon-link"></span></a>new WhatsApi(config, reader, writer, processor, transport)</h3>
+
+<p>Constructor for WhatsApi</p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config</td>
+<td><code><a href="#WhatsApiConfig">WhatsApiConfig</a></code></td>
+</tr>
+<tr>
+<td>reader</td>
+<td><code><a href="#Reader">Reader</a></code></td>
+</tr>
+<tr>
+<td>writer</td>
+<td><code><a href="#Writer">Writer</a></code></td>
+</tr>
+<tr>
+<td>processor</td>
+<td><code>Processor</code></td>
+</tr>
+<tr>
+<td>transport</td>
+<td><code>Transport</code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#defaultConfig"></a></p>
+
+<h3>
+<a id="user-content-whatsapidefaultconfig--whatsapiconfig" class="anchor" href="#whatsapidefaultconfig--whatsapiconfig" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.defaultConfig : <code><a href="#WhatsApiConfig">WhatsApiConfig</a></code>
+</h3>
+
+<p><strong>Kind</strong>: instance property of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<a name="user-content-WhatsApi#init"></a></p>
+
+<h3>
+<a id="user-content-whatsapiinit" class="anchor" href="#whatsapiinit" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.init()</h3>
+
+<p>Initializes WhatsApi
+Internal method, should not be called externally</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<a name="user-content-WhatsApi#addCallback"></a></p>
+
+<h3>
+<a id="user-content-whatsapiaddcallbackid-cb" class="anchor" href="#whatsapiaddcallbackid-cb" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.addCallback(id, cb)</h3>
+
+<p>Add a new callback to the queue</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td>The id of the message that's being sent</td>
+</tr>
+<tr>
+<td>cb</td>
+<td><code>function</code></td>
+<td>The callback to be called when a response for the message is received</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#executeCallback"></a></p>
+
+<h3>
+<a id="user-content-whatsapiexecutecallbackid-args" class="anchor" href="#whatsapiexecutecallbackid-args" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.executeCallback(id, args)</h3>
+
+<p>Execute the callback for the provided message id and remove it from the queue</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td>The id of the received message</td>
+</tr>
+<tr>
+<td>args</td>
+<td><code>Array</code></td>
+<td>The parameters to be passed to the called callback</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#connect"></a></p>
+
+<h3>
+<a id="user-content-whatsapiconnectcallback" class="anchor" href="#whatsapiconnectcallback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.connect(callback)</h3>
+
+<p>Connect to the WhatsApp server using the connection parameters specified in the configuration</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the connection has completed</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#disconnect"></a></p>
+
+<h3>
+<a id="user-content-whatsapidisconnect" class="anchor" href="#whatsapidisconnect" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.disconnect()</h3>
+
+<p>Disconnect from the WhatsApp server</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<a name="user-content-WhatsApi#login"></a></p>
+
+<h3>
+<a id="user-content-whatsapilogincallback" class="anchor" href="#whatsapilogincallback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.login(callback)</h3>
+
+<p>Login to WhatsApp</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the login has completed</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#nextMessageId"></a></p>
+
+<h3>
+<a id="user-content-whatsapinextmessageidprefix--string" class="anchor" href="#whatsapinextmessageidprefix--string" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.nextMessageId(prefix) ⇒ <code>String</code>
+</h3>
+
+<p>Generate the next ID for outcoming messages</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<strong>Returns</strong>: <code>String</code> - Message ID  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prefix</td>
+<td><code>String</code></td>
+<td>The ID prefix</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#createJID"></a></p>
+
+<h3>
+<a id="user-content-whatsapicreatejidmsisdn--string" class="anchor" href="#whatsapicreatejidmsisdn--string" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.createJID(msisdn) ⇒ <code>String</code>
+</h3>
+
+<p>Create the JID for the given number</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<strong>Returns</strong>: <code>String</code> - The JID  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msisdn</td>
+<td><code>String</code></td>
+<td>Phone number</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#requestContactsSync"></a></p>
+
+<h3>
+<a id="user-content-whatsapirequestcontactssynccontacts-mode-context-callback" class="anchor" href="#whatsapirequestcontactssynccontacts-mode-context-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.requestContactsSync(contacts, mode, context, callback)</h3>
+
+<p>Requests contacts sync</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contacts</td>
+<td><code>Array</code></td>
+<td>Array of contacts to be synced; single string phone number is accepted</td>
+</tr>
+<tr>
+<td>mode</td>
+<td><code>String</code></td>
+<td>The sync mode. 'full' or 'delta'</td>
+</tr>
+<tr>
+<td>context</td>
+<td><code>String</code></td>
+<td>The sync context. 'registration' or 'background' (more info in the wiki)</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#SyncCallback">SyncCallback</a></code></td>
+<td>Called when sync results are ready</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#setPrivacySettings"></a></p>
+
+<h3>
+<a id="user-content-whatsapisetprivacysettingsname-value" class="anchor" href="#whatsapisetprivacysettingsname-value" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.setPrivacySettings(name, value)</h3>
+
+<p>Update privacy settings</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>String</code></td>
+<td>The name of the setting to update: 'last' for last seen, 'status', 'profile' for profile picture</td>
+</tr>
+<tr>
+<td>value</td>
+<td><code>String</code></td>
+<td>The new value for the setting: 'all', 'contacts', 'none'</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#requestPrivacySettings"></a></p>
+
+<h3>
+<a id="user-content-whatsapirequestprivacysettings" class="anchor" href="#whatsapirequestprivacysettings" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.requestPrivacySettings()</h3>
+
+<p>Request privacy settings for the current user</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<a name="user-content-WhatsApi#setStatus"></a></p>
+
+<h3>
+<a id="user-content-whatsapisetstatusstatus-callback" class="anchor" href="#whatsapisetstatusstatus-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.setStatus(status, callback)</h3>
+
+<p>Set current logged in user status</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td><code>String</code></td>
+<td>The new status message</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#getStatus"></a></p>
+
+<h3>
+<a id="user-content-whatsapigetstatusnumber-callback" class="anchor" href="#whatsapigetstatusnumber-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.getStatus(number, callback)</h3>
+
+<p>Request status for the given number</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>number</td>
+<td><code>String</code></td>
+<td>Phone number</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#StatusCallback">StatusCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#getStatuses"></a></p>
+
+<h3>
+<a id="user-content-whatsapigetstatusesnumbers-callback" class="anchor" href="#whatsapigetstatusesnumbers-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.getStatuses(numbers, callback)</h3>
+
+<p>Request statuses for the given array of phone numbers</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>numbers</td>
+<td><code>Array</code></td>
+<td>Array of phone numbers</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#StatusCallback">StatusCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#requestLastSeen"></a></p>
+
+<h3>
+<a id="user-content-whatsapirequestlastseenwho-callback" class="anchor" href="#whatsapirequestlastseenwho-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.requestLastSeen(who, callback)</h3>
+
+<p>Request last seen time for given user</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>who</td>
+<td><code>String</code></td>
+<td>Phone number</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#LastSeenCallback">LastSeenCallback</a></code></td>
+<td>Called when the last seen time is received</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#setProfilePicture"></a></p>
+
+<h3>
+<a id="user-content-whatsapisetprofilepicturefilepath" class="anchor" href="#whatsapisetprofilepicturefilepath" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.setProfilePicture(filepath)</h3>
+
+<p>Set a new profile picture for the active account</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filepath</td>
+<td><code>String</code></td>
+<td>Path or URL to a valid JPEG image. Do not use a large image because we can only send a max of approx. 65.000 bytes and that includes the generated thumbnail.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">//sets a random image as profile picture. Image is retrieved from lorempixel.com</span>
+wa.<span class="pl-c1">setProfilePicture</span>(<span class="pl-s"><span class="pl-pds">'</span>http://lorempixel.com/400/400/?.jpg<span class="pl-pds">'</span></span>);</pre></div>
+
+<p><a name="user-content-WhatsApi#getProfilePicture"></a></p>
+
+<h3>
+<a id="user-content-whatsapigetprofilepicturetarget-small-callback" class="anchor" href="#whatsapigetprofilepicturetarget-small-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.getProfilePicture(target, small, callback)</h3>
+
+<p>Send a request for the profile picture for the specified account</p>
+
+<p>When received from server a profile.picture event is fired
+When profile picture can not be retrieved an error 404 item-not-found is returned</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td><code>String</code></td>
+<td>Phonenumber of the account to request profile picture from</td>
+</tr>
+<tr>
+<td>small</td>
+<td><code>Boolean</code></td>
+<td>true for thumbnail, false for full size profile picture</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#ProfilePictureCallback">ProfilePictureCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">// Request full size profile picture from 49xxxxxxxx</span>
+wa.<span class="pl-c1">getProfilePicture</span>(<span class="pl-s"><span class="pl-pds">'</span>49xxxxxxxx<span class="pl-pds">'</span></span>, <span class="pl-c1">false</span>, <span class="pl-k">function</span>(<span class="pl-smi">res</span>) {
+  fs.<span class="pl-c1">writeFile</span>(<span class="pl-s"><span class="pl-pds">'</span>whatsapi/media/profilepic-<span class="pl-pds">'</span></span><span class="pl-k">+</span>res.<span class="pl-c1">from</span><span class="pl-k">+</span>(res.<span class="pl-c1">isPreview</span><span class="pl-k">?</span><span class="pl-s"><span class="pl-pds">'</span>-preview<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>-full<span class="pl-pds">'</span></span>)<span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>.jpg<span class="pl-pds">'</span></span>, res.<span class="pl-c1">pictureData</span>); 
+});</pre></div>
+
+<p><a name="user-content-WhatsApi#requestExtendAccount"></a></p>
+
+<h3>
+<a id="user-content-whatsapirequestextendaccount" class="anchor" href="#whatsapirequestextendaccount" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.requestExtendAccount()</h3>
+
+<p>Extend account by one year from now</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<a name="user-content-WhatsApi#sendIsOnline"></a></p>
+
+<h3>
+<a id="user-content-whatsapisendisonline" class="anchor" href="#whatsapisendisonline" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.sendIsOnline()</h3>
+
+<p>Send online presence for the current user</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<a name="user-content-WhatsApi#sendIsOffline"></a></p>
+
+<h3>
+<a id="user-content-whatsapisendisoffline" class="anchor" href="#whatsapisendisoffline" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.sendIsOffline()</h3>
+
+<p>Send offline presence for the current user</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<a name="user-content-WhatsApi#sendComposingState"></a></p>
+
+<h3>
+<a id="user-content-whatsapisendcomposingstateto" class="anchor" href="#whatsapisendcomposingstateto" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.sendComposingState(to)</h3>
+
+<p>Send composing state to the given user</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td><code>String</code></td>
+<td>Phone number</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#sendPausedState"></a></p>
+
+<h3>
+<a id="user-content-whatsapisendpausedstateto" class="anchor" href="#whatsapisendpausedstateto" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.sendPausedState(to)</h3>
+
+<p>Send stopped typing/composing to the given user</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td><code>String</code></td>
+<td>Phone number</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#sendPresenceSubscription"></a></p>
+
+<h3>
+<a id="user-content-whatsapisendpresencesubscriptionwho" class="anchor" href="#whatsapisendpresencesubscriptionwho" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.sendPresenceSubscription(who)</h3>
+
+<p>Request subscription to presence of the given user</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>who</td>
+<td><code>String</code></td>
+<td>Phone number</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#sendPresenceUnsubscription"></a></p>
+
+<h3>
+<a id="user-content-whatsapisendpresenceunsubscriptionwho" class="anchor" href="#whatsapisendpresenceunsubscriptionwho" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.sendPresenceUnsubscription(who)</h3>
+
+<p>Requst unsubscription to presence for the given user</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>who</td>
+<td><code>String</code></td>
+<td>Phone number</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#requestGroupsList"></a></p>
+
+<h3>
+<a id="user-content-whatsapirequestgroupslisttype-callback" class="anchor" href="#whatsapirequestgroupslisttype-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.requestGroupsList(type, callback)</h3>
+
+<p>Request a filtered list of groups</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><code>String</code></td>
+<td>(optional) Groups list filter, 'owning' or 'participating'</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupsListCallback">GroupsListCallback</a></code></td>
+<td>Called when the response is received</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">requestGroupList</span>(<span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">array</span>) { });</pre></div>
+
+<p><a name="user-content-WhatsApi#requestGroupInfo"></a></p>
+
+<h3>
+<a id="user-content-whatsapirequestgroupinfogroupid-callback" class="anchor" href="#whatsapirequestgroupinfogroupid-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.requestGroupInfo(groupId, callback)</h3>
+
+<p>Request info for a group</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupId</td>
+<td><code>String</code></td>
+<td>The ID of the group to request info for</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupInfoCallback">GroupInfoCallback</a></code></td>
+<td>Called when the response is received</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#createGroup"></a></p>
+
+<h3>
+<a id="user-content-whatsapicreategroupsubject-numbers-callback" class="anchor" href="#whatsapicreategroupsubject-numbers-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.createGroup(subject, numbers, callback)</h3>
+
+<p>Creates a new group</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subject</td>
+<td><code>String</code></td>
+<td>Subject/topic/name of the group</td>
+</tr>
+<tr>
+<td>numbers</td>
+<td><code>Array.&lt;String&gt;</code></td>
+<td>Array of phone numbers to be added as participants to the group</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupCreatedCallback">GroupCreatedCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">createGroup</span>(<span class="pl-s"><span class="pl-pds">'</span>Group name<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>39xxxxxxxxxx<span class="pl-pds">'</span></span>);
+<span class="pl-c">// or</span>
+wa.<span class="pl-c1">createGroup</span>(<span class="pl-s"><span class="pl-pds">'</span>Group name<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>39xxxxxxxxxx<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>31xxxxxxxxxx<span class="pl-pds">'</span></span>]);</pre></div>
+
+<p><a name="user-content-WhatsApi#addGroupParticipants"></a></p>
+
+<h3>
+<a id="user-content-whatsapiaddgroupparticipantsgroupid-numbers-callback" class="anchor" href="#whatsapiaddgroupparticipantsgroupid-numbers-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.addGroupParticipants(groupId, numbers, callback)</h3>
+
+<p>Add new participants to the group</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupId</td>
+<td><code>String</code></td>
+<td>Group ID</td>
+</tr>
+<tr>
+<td>numbers</td>
+<td><code>Array</code></td>
+<td>Array of participants numbers to add</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupParticipantsCallback">GroupParticipantsCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#removeGroupParticipants"></a></p>
+
+<h3>
+<a id="user-content-whatsapiremovegroupparticipantsgroupid-numbers-callback" class="anchor" href="#whatsapiremovegroupparticipantsgroupid-numbers-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.removeGroupParticipants(groupId, numbers, callback)</h3>
+
+<p>Remove participants from the group</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupId</td>
+<td><code>String</code></td>
+<td>Group ID</td>
+</tr>
+<tr>
+<td>numbers</td>
+<td><code>Array</code></td>
+<td>Array of participants numbers to remove</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupParticipantsCallback">GroupParticipantsCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#promoteGroupParticipants"></a></p>
+
+<h3>
+<a id="user-content-whatsapipromotegroupparticipantsgroupid-numbers-callback" class="anchor" href="#whatsapipromotegroupparticipantsgroupid-numbers-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.promoteGroupParticipants(groupId, numbers, callback)</h3>
+
+<p>Promote participants as admin of the group</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupId</td>
+<td><code>String</code></td>
+<td>Group ID</td>
+</tr>
+<tr>
+<td>numbers</td>
+<td><code>Array</code></td>
+<td>Array of participants numbers to promote</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupParticipantsCallback">GroupParticipantsCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#demoteGroupParticipants"></a></p>
+
+<h3>
+<a id="user-content-whatsapidemotegroupparticipantsgroupid-numbers-callback" class="anchor" href="#whatsapidemotegroupparticipantsgroupid-numbers-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.demoteGroupParticipants(groupId, numbers, callback)</h3>
+
+<p>Demote participants from being admin of the group</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupId</td>
+<td><code>String</code></td>
+<td>Group ID</td>
+</tr>
+<tr>
+<td>numbers</td>
+<td><code>Array</code></td>
+<td>Array of participants numbers to demote</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupParticipantsCallback">GroupParticipantsCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#requestGroupsLeave"></a></p>
+
+<h3>
+<a id="user-content-whatsapirequestgroupsleavegroupids-callback" class="anchor" href="#whatsapirequestgroupsleavegroupids-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.requestGroupsLeave(groupIds, callback)</h3>
+
+<p>Request to leave groups</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupIds</td>
+<td><code>Array.&lt;String&gt;</code></td>
+<td>Group IDs you want to leave</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupLeaveCallback">GroupLeaveCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#requestGroupLeave"></a></p>
+
+<h3>
+<a id="user-content-whatsapirequestgroupleavegroupid-callback" class="anchor" href="#whatsapirequestgroupleavegroupid-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.requestGroupLeave(groupId, callback)</h3>
+
+<p>Request to leave a single group</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupId</td>
+<td><code>String</code></td>
+<td>Group ID you want to leave</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupLeaveCallback">GroupLeaveCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#setGroupSubject"></a></p>
+
+<h3>
+<a id="user-content-whatsapisetgroupsubjectgroupid-subject-callback" class="anchor" href="#whatsapisetgroupsubjectgroupid-subject-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.setGroupSubject(groupId, subject, callback)</h3>
+
+<p>Update the subject for the given group</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupId</td>
+<td><code>String</code></td>
+<td>ID of the group you want to change the subject of</td>
+</tr>
+<tr>
+<td>subject</td>
+<td><code>String</code></td>
+<td>New subject/topic/name text</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupSubjectCallback">GroupSubjectCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#sendMessage"></a></p>
+
+<h3>
+<a id="user-content-whatsapisendmessageto-message-msgid-callback" class="anchor" href="#whatsapisendmessageto-message-msgid-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.sendMessage(to, message, msgid, callback)</h3>
+
+<p>Send a text message</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<strong>Emits</strong>: <code><a href="#event_clientReceived">clientReceived</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td><code>String</code></td>
+<td>Recipient number or JID</td>
+</tr>
+<tr>
+<td>message</td>
+<td><code>String</code></td>
+<td>Message text content</td>
+</tr>
+<tr>
+<td>msgid</td>
+<td><code>String</code></td>
+<td>Message ID (optional)</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the server receives the message</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#sendLocation"></a></p>
+
+<h3>
+<a id="user-content-whatsapisendlocationto-lat-lng-name-url-msgid-callback" class="anchor" href="#whatsapisendlocationto-lat-lng-name-url-msgid-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.sendLocation(to, lat, lng, name, url, msgid, callback)</h3>
+
+<p>Send a location message</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<strong>Emits</strong>: <code><a href="#event_clientReceived">clientReceived</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td><code>String</code></td>
+<td>Recipient number or JID</td>
+</tr>
+<tr>
+<td>lat</td>
+<td><code>Number</code></td>
+<td>Latitude</td>
+</tr>
+<tr>
+<td>lng</td>
+<td><code>Number</code></td>
+<td>Longitude</td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>String</code></td>
+<td>Place name (optional)</td>
+</tr>
+<tr>
+<td>url</td>
+<td><code>String</code></td>
+<td>Place URL (optional)</td>
+</tr>
+<tr>
+<td>msgid</td>
+<td><code>String</code></td>
+<td>Message ID (optional)</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the server receives the message</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#sendImage"></a></p>
+
+<h3>
+<a id="user-content-whatsapisendimageto-filepath-caption-msgid-callback" class="anchor" href="#whatsapisendimageto-filepath-caption-msgid-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.sendImage(to, filepath, caption, msgid, callback)</h3>
+
+<p>Send an image to the specified destination. An optional caption an message ID can be specified.</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<strong>Emits</strong>: <code><a href="#event_clientReceived">clientReceived</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td><code>String</code></td>
+<td>Destination phone number in international format, without '+'. E.g. 491234567890</td>
+</tr>
+<tr>
+<td>filepath</td>
+<td><code>String</code></td>
+<td>File path or URL of the image to send</td>
+</tr>
+<tr>
+<td>caption</td>
+<td><code>String</code></td>
+<td>(optional) caption to display together with the image</td>
+</tr>
+<tr>
+<td>msgid</td>
+<td><code>String</code></td>
+<td>(optional) message ID</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the server receives the message</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">sendImage</span>(<span class="pl-s"><span class="pl-pds">'</span>491234567890<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>http://lorempixel.com/800/600/?.jpg<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>This is a caption<span class="pl-pds">'</span></span>);</pre></div>
+
+<p><a name="user-content-WhatsApi#sendVideo"></a></p>
+
+<h3>
+<a id="user-content-whatsapisendvideoto-filepath-caption-msgid-callback" class="anchor" href="#whatsapisendvideoto-filepath-caption-msgid-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.sendVideo(to, filepath, caption, msgid, callback)</h3>
+
+<p>Send a video to the specified destination. An optional caption an message ID can be specified.</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<strong>Emits</strong>: <code><a href="#event_clientReceived">clientReceived</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td><code>String</code></td>
+<td>Destination phone number in international format, without '+'. E.g. 491234567890</td>
+</tr>
+<tr>
+<td>filepath</td>
+<td><code>String</code></td>
+<td>File path or URL of the video to send</td>
+</tr>
+<tr>
+<td>caption</td>
+<td><code>String</code></td>
+<td>(optional) caption to display together with the video</td>
+</tr>
+<tr>
+<td>msgid</td>
+<td><code>String</code></td>
+<td>(optional) message ID</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the server receives the messages</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">sendVideo</span>(<span class="pl-s"><span class="pl-pds">'</span>491234567890<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Big Buck Bunny<span class="pl-pds">'</span></span>);</pre></div>
+
+<p><a name="user-content-WhatsApi#sendAudio"></a></p>
+
+<h3>
+<a id="user-content-whatsapisendaudioto-filepath-msgid-callback" class="anchor" href="#whatsapisendaudioto-filepath-msgid-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.sendAudio(to, filepath, msgid, callback)</h3>
+
+<p>Send an audio file to the specified destination.</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<strong>Emits</strong>: <code><a href="#event_clientReceived">clientReceived</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td><code>String</code></td>
+<td>Destination phone number in international format, without '+'. E.g. 491234567890</td>
+</tr>
+<tr>
+<td>filepath</td>
+<td><code>String</code></td>
+<td>File path or URL of the audio file to send</td>
+</tr>
+<tr>
+<td>msgid</td>
+<td><code>String</code></td>
+<td>(optional) message ID</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the server receives the messages</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">sendAudio</span>(<span class="pl-s"><span class="pl-pds">'</span>491234567890<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>http://archive.org/download/Exodus1KJV/02001_Exodus_1.mp3<span class="pl-pds">'</span></span>);</pre></div>
+
+<p><a name="user-content-WhatsApi#sendVcard"></a></p>
+
+<h3>
+<a id="user-content-whatsapisendvcardto-filepath-name-msgid-callback" class="anchor" href="#whatsapisendvcardto-filepath-name-msgid-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.sendVcard(to, filepath, name, msgid, callback)</h3>
+
+<p>Send a vCard file to the specified destination.</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<strong>Emits</strong>: <code><a href="#event_clientReceived">clientReceived</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td><code>String</code></td>
+<td>Destination phone number in international format, without '+'. E.g. 491234567890</td>
+</tr>
+<tr>
+<td>filepath</td>
+<td><code>String</code></td>
+<td>File path or URL of the vCard file to send</td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>String</code></td>
+<td>Name of the person in the vcard</td>
+</tr>
+<tr>
+<td>msgid</td>
+<td><code>String</code></td>
+<td>(optional) message ID</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the server receives the messages</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">sendVcard</span>(<span class="pl-s"><span class="pl-pds">'</span>491234567890<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>http://www.w3.org/2002/12/cal/vcard-examples/john-doe.vcf<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>John Doe<span class="pl-pds">'</span></span>);</pre></div>
+
+<p><a name="user-content-WhatsApi#JIDtoId"></a></p>
+
+<h3>
+<a id="user-content-whatsapijidtoidjid" class="anchor" href="#whatsapijidtoidjid" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.JIDtoId(jid)</h3>
+
+<p>Convert a group JID to ID only</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jid</td>
+<td><code>String</code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#createPongNode"></a></p>
+
+<h3>
+<a id="user-content-whatsapicreatepongnodemessageid--node" class="anchor" href="#whatsapicreatepongnodemessageid--node" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.createPongNode(messageId) ⇒ <code><a href="#Node">Node</a></code>
+</h3>
+
+<p>Create a pong node, to be sent in response to ping</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<strong>Returns</strong>: <code><a href="#Node">Node</a></code> - Created node  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>messageId</td>
+<td><code>String</code></td>
+<td>The ping message ID</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#sendMessageReceipt"></a></p>
+
+<h3>
+<a id="user-content-whatsapisendmessagereceiptmessage-type" class="anchor" href="#whatsapisendmessagereceiptmessage-type" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.sendMessageReceipt(message, type)</h3>
+
+<p>Send the receipt for a message</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td><code>Object</code></td>
+<td></td>
+</tr>
+<tr>
+<td>type</td>
+<td><code>String</code></td>
+<td>
+<code>read</code> or null for standard receipts</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#createAckNode"></a></p>
+
+<h3>
+<a id="user-content-whatsapicreateacknodenode--node" class="anchor" href="#whatsapicreateacknodenode--node" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.createAckNode(node) ⇒ <code><a href="#Node">Node</a></code>
+</h3>
+
+<p>Create a 'ack' node, to be sent when a 'receipt' node is received</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<strong>Returns</strong>: <code><a href="#Node">Node</a></code> - Created node  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>node</td>
+<td><code><a href="#Node">Node</a></code></td>
+<td>The 'receipt' node</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#requestServerProperties"></a></p>
+
+<h3>
+<a id="user-content-whatsapirequestserverpropertiescallback" class="anchor" href="#whatsapirequestserverpropertiescallback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.requestServerProperties(callback)</h3>
+
+<p>Request WhatsApp server properties</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the properties are received</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#requestServicePricing"></a></p>
+
+<h3>
+<a id="user-content-whatsapirequestservicepricinglanguage-country-callback" class="anchor" href="#whatsapirequestservicepricinglanguage-country-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApi.requestServicePricing(language, country, callback)</h3>
+
+<p>Request WhatsApp service pricing</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApi">WhatsApi</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>language</td>
+<td><code>String</code></td>
+<td>Language code (e.g. 'en')</td>
+</tr>
+<tr>
+<td>country</td>
+<td><code>String</code></td>
+<td>Country code (e.g. 'us')</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#PricingCallback">PricingCallback</a></code></td>
+<td>Called when the pricing is recived</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApiDebug"></a></p>
+
+<h2>
+<a id="user-content-whatsapidebug--whatsapi" class="anchor" href="#whatsapidebug--whatsapi" aria-hidden="true"><span class="octicon octicon-link"></span></a>WhatsApiDebug ⇐ <code><a href="#WhatsApi">WhatsApi</a></code>
+</h2>
+
+<p><strong>Extends:</strong> <code><a href="#WhatsApi">WhatsApi</a></code><br>
+<strong>Kind</strong>: global class  </p>
+
+<ul>
+<li>
+<a href="#WhatsApiDebug">WhatsApiDebug</a> ⇐ <code><a href="#WhatsApi">WhatsApi</a></code>
+
+<ul>
+<li><a href="#new_WhatsApiDebug_new">new WhatsApiDebug(config, reader, writer, processor, transport)</a></li>
+<li>
+<a href="#WhatsApi#defaultConfig">.defaultConfig</a> : <code><a href="#WhatsApiConfig">WhatsApiConfig</a></code>
+</li>
+<li><a href="#WhatsApi#init">.init()</a></li>
+<li><a href="#WhatsApi#addCallback">.addCallback(id, cb)</a></li>
+<li><a href="#WhatsApi#executeCallback">.executeCallback(id, args)</a></li>
+<li><a href="#WhatsApi#connect">.connect(callback)</a></li>
+<li><a href="#WhatsApi#disconnect">.disconnect()</a></li>
+<li><a href="#WhatsApi#login">.login(callback)</a></li>
+<li>
+<a href="#WhatsApi#nextMessageId">.nextMessageId(prefix)</a> ⇒ <code>String</code>
+</li>
+<li>
+<a href="#WhatsApi#createJID">.createJID(msisdn)</a> ⇒ <code>String</code>
+</li>
+<li><a href="#WhatsApi#requestContactsSync">.requestContactsSync(contacts, mode, context, callback)</a></li>
+<li><a href="#WhatsApi#setPrivacySettings">.setPrivacySettings(name, value)</a></li>
+<li><a href="#WhatsApi#requestPrivacySettings">.requestPrivacySettings()</a></li>
+<li><a href="#WhatsApi#setStatus">.setStatus(status, callback)</a></li>
+<li><a href="#WhatsApi#getStatus">.getStatus(number, callback)</a></li>
+<li><a href="#WhatsApi#getStatuses">.getStatuses(numbers, callback)</a></li>
+<li><a href="#WhatsApi#requestLastSeen">.requestLastSeen(who, callback)</a></li>
+<li><a href="#WhatsApi#setProfilePicture">.setProfilePicture(filepath)</a></li>
+<li><a href="#WhatsApi#getProfilePicture">.getProfilePicture(target, small, callback)</a></li>
+<li><a href="#WhatsApi#requestExtendAccount">.requestExtendAccount()</a></li>
+<li><a href="#WhatsApi#sendIsOnline">.sendIsOnline()</a></li>
+<li><a href="#WhatsApi#sendIsOffline">.sendIsOffline()</a></li>
+<li><a href="#WhatsApi#sendComposingState">.sendComposingState(to)</a></li>
+<li><a href="#WhatsApi#sendPausedState">.sendPausedState(to)</a></li>
+<li><a href="#WhatsApi#sendPresenceSubscription">.sendPresenceSubscription(who)</a></li>
+<li><a href="#WhatsApi#sendPresenceUnsubscription">.sendPresenceUnsubscription(who)</a></li>
+<li><a href="#WhatsApi#requestGroupsList">.requestGroupsList(type, callback)</a></li>
+<li><a href="#WhatsApi#requestGroupInfo">.requestGroupInfo(groupId, callback)</a></li>
+<li><a href="#WhatsApi#createGroup">.createGroup(subject, numbers, callback)</a></li>
+<li><a href="#WhatsApi#addGroupParticipants">.addGroupParticipants(groupId, numbers, callback)</a></li>
+<li><a href="#WhatsApi#removeGroupParticipants">.removeGroupParticipants(groupId, numbers, callback)</a></li>
+<li><a href="#WhatsApi#promoteGroupParticipants">.promoteGroupParticipants(groupId, numbers, callback)</a></li>
+<li><a href="#WhatsApi#demoteGroupParticipants">.demoteGroupParticipants(groupId, numbers, callback)</a></li>
+<li><a href="#WhatsApi#requestGroupsLeave">.requestGroupsLeave(groupIds, callback)</a></li>
+<li><a href="#WhatsApi#requestGroupLeave">.requestGroupLeave(groupId, callback)</a></li>
+<li><a href="#WhatsApi#setGroupSubject">.setGroupSubject(groupId, subject, callback)</a></li>
+<li><a href="#WhatsApi#sendMessage">.sendMessage(to, message, msgid, callback)</a></li>
+<li><a href="#WhatsApi#sendLocation">.sendLocation(to, lat, lng, name, url, msgid, callback)</a></li>
+<li><a href="#WhatsApi#sendImage">.sendImage(to, filepath, caption, msgid, callback)</a></li>
+<li><a href="#WhatsApi#sendVideo">.sendVideo(to, filepath, caption, msgid, callback)</a></li>
+<li><a href="#WhatsApi#sendAudio">.sendAudio(to, filepath, msgid, callback)</a></li>
+<li><a href="#WhatsApi#sendVcard">.sendVcard(to, filepath, name, msgid, callback)</a></li>
+<li><a href="#WhatsApi#JIDtoId">.JIDtoId(jid)</a></li>
+<li>
+<a href="#WhatsApi#createPongNode">.createPongNode(messageId)</a> ⇒ <code><a href="#Node">Node</a></code>
+</li>
+<li><a href="#WhatsApi#sendMessageReceipt">.sendMessageReceipt(message, type)</a></li>
+<li>
+<a href="#WhatsApi#createAckNode">.createAckNode(node)</a> ⇒ <code><a href="#Node">Node</a></code>
+</li>
+<li><a href="#WhatsApi#requestServerProperties">.requestServerProperties(callback)</a></li>
+<li><a href="#WhatsApi#requestServicePricing">.requestServicePricing(language, country, callback)</a></li>
+</ul>
+</li>
+</ul>
+
+<p><a name="user-content-new_WhatsApiDebug_new"></a></p>
+
+<h3>
+<a id="user-content-new-whatsapidebugconfig-reader-writer-processor-transport" class="anchor" href="#new-whatsapidebugconfig-reader-writer-processor-transport" aria-hidden="true"><span class="octicon octicon-link"></span></a>new WhatsApiDebug(config, reader, writer, processor, transport)</h3>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config</td>
+<td><code><a href="#WhatsApiConfig">WhatsApiConfig</a></code></td>
+</tr>
+<tr>
+<td>reader</td>
+<td><code><a href="#Reader">Reader</a></code></td>
+</tr>
+<tr>
+<td>writer</td>
+<td><code><a href="#Writer">Writer</a></code></td>
+</tr>
+<tr>
+<td>processor</td>
+<td><code>Processor</code></td>
+</tr>
+<tr>
+<td>transport</td>
+<td><code>Transport</code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#defaultConfig"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugdefaultconfig--whatsapiconfig" class="anchor" href="#whatsapidebugdefaultconfig--whatsapiconfig" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.defaultConfig : <code><a href="#WhatsApiConfig">WhatsApiConfig</a></code>
+</h3>
+
+<p><strong>Kind</strong>: instance property of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<a name="user-content-WhatsApi#init"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebuginit" class="anchor" href="#whatsapidebuginit" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.init()</h3>
+
+<p>Initializes WhatsApi
+Internal method, should not be called externally</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<a name="user-content-WhatsApi#addCallback"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugaddcallbackid-cb" class="anchor" href="#whatsapidebugaddcallbackid-cb" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.addCallback(id, cb)</h3>
+
+<p>Add a new callback to the queue</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td>The id of the message that's being sent</td>
+</tr>
+<tr>
+<td>cb</td>
+<td><code>function</code></td>
+<td>The callback to be called when a response for the message is received</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#executeCallback"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugexecutecallbackid-args" class="anchor" href="#whatsapidebugexecutecallbackid-args" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.executeCallback(id, args)</h3>
+
+<p>Execute the callback for the provided message id and remove it from the queue</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td>The id of the received message</td>
+</tr>
+<tr>
+<td>args</td>
+<td><code>Array</code></td>
+<td>The parameters to be passed to the called callback</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#connect"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugconnectcallback" class="anchor" href="#whatsapidebugconnectcallback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.connect(callback)</h3>
+
+<p>Connect to the WhatsApp server using the connection parameters specified in the configuration</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the connection has completed</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#disconnect"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugdisconnect" class="anchor" href="#whatsapidebugdisconnect" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.disconnect()</h3>
+
+<p>Disconnect from the WhatsApp server</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<a name="user-content-WhatsApi#login"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebuglogincallback" class="anchor" href="#whatsapidebuglogincallback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.login(callback)</h3>
+
+<p>Login to WhatsApp</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the login has completed</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#nextMessageId"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugnextmessageidprefix--string" class="anchor" href="#whatsapidebugnextmessageidprefix--string" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.nextMessageId(prefix) ⇒ <code>String</code>
+</h3>
+
+<p>Generate the next ID for outcoming messages</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<strong>Returns</strong>: <code>String</code> - Message ID  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prefix</td>
+<td><code>String</code></td>
+<td>The ID prefix</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#createJID"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugcreatejidmsisdn--string" class="anchor" href="#whatsapidebugcreatejidmsisdn--string" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.createJID(msisdn) ⇒ <code>String</code>
+</h3>
+
+<p>Create the JID for the given number</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<strong>Returns</strong>: <code>String</code> - The JID  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msisdn</td>
+<td><code>String</code></td>
+<td>Phone number</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#requestContactsSync"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugrequestcontactssynccontacts-mode-context-callback" class="anchor" href="#whatsapidebugrequestcontactssynccontacts-mode-context-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.requestContactsSync(contacts, mode, context, callback)</h3>
+
+<p>Requests contacts sync</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contacts</td>
+<td><code>Array</code></td>
+<td>Array of contacts to be synced; single string phone number is accepted</td>
+</tr>
+<tr>
+<td>mode</td>
+<td><code>String</code></td>
+<td>The sync mode. 'full' or 'delta'</td>
+</tr>
+<tr>
+<td>context</td>
+<td><code>String</code></td>
+<td>The sync context. 'registration' or 'background' (more info in the wiki)</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#SyncCallback">SyncCallback</a></code></td>
+<td>Called when sync results are ready</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#setPrivacySettings"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsetprivacysettingsname-value" class="anchor" href="#whatsapidebugsetprivacysettingsname-value" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.setPrivacySettings(name, value)</h3>
+
+<p>Update privacy settings</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>String</code></td>
+<td>The name of the setting to update: 'last' for last seen, 'status', 'profile' for profile picture</td>
+</tr>
+<tr>
+<td>value</td>
+<td><code>String</code></td>
+<td>The new value for the setting: 'all', 'contacts', 'none'</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#requestPrivacySettings"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugrequestprivacysettings" class="anchor" href="#whatsapidebugrequestprivacysettings" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.requestPrivacySettings()</h3>
+
+<p>Request privacy settings for the current user</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<a name="user-content-WhatsApi#setStatus"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsetstatusstatus-callback" class="anchor" href="#whatsapidebugsetstatusstatus-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.setStatus(status, callback)</h3>
+
+<p>Set current logged in user status</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td><code>String</code></td>
+<td>The new status message</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#getStatus"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebuggetstatusnumber-callback" class="anchor" href="#whatsapidebuggetstatusnumber-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.getStatus(number, callback)</h3>
+
+<p>Request status for the given number</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>number</td>
+<td><code>String</code></td>
+<td>Phone number</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#StatusCallback">StatusCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#getStatuses"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebuggetstatusesnumbers-callback" class="anchor" href="#whatsapidebuggetstatusesnumbers-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.getStatuses(numbers, callback)</h3>
+
+<p>Request statuses for the given array of phone numbers</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>numbers</td>
+<td><code>Array</code></td>
+<td>Array of phone numbers</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#StatusCallback">StatusCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#requestLastSeen"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugrequestlastseenwho-callback" class="anchor" href="#whatsapidebugrequestlastseenwho-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.requestLastSeen(who, callback)</h3>
+
+<p>Request last seen time for given user</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>who</td>
+<td><code>String</code></td>
+<td>Phone number</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#LastSeenCallback">LastSeenCallback</a></code></td>
+<td>Called when the last seen time is received</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#setProfilePicture"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsetprofilepicturefilepath" class="anchor" href="#whatsapidebugsetprofilepicturefilepath" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.setProfilePicture(filepath)</h3>
+
+<p>Set a new profile picture for the active account</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filepath</td>
+<td><code>String</code></td>
+<td>Path or URL to a valid JPEG image. Do not use a large image because we can only send a max of approx. 65.000 bytes and that includes the generated thumbnail.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">//sets a random image as profile picture. Image is retrieved from lorempixel.com</span>
+wa.<span class="pl-c1">setProfilePicture</span>(<span class="pl-s"><span class="pl-pds">'</span>http://lorempixel.com/400/400/?.jpg<span class="pl-pds">'</span></span>);</pre></div>
+
+<p><a name="user-content-WhatsApi#getProfilePicture"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebuggetprofilepicturetarget-small-callback" class="anchor" href="#whatsapidebuggetprofilepicturetarget-small-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.getProfilePicture(target, small, callback)</h3>
+
+<p>Send a request for the profile picture for the specified account</p>
+
+<p>When received from server a profile.picture event is fired
+When profile picture can not be retrieved an error 404 item-not-found is returned</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td><code>String</code></td>
+<td>Phonenumber of the account to request profile picture from</td>
+</tr>
+<tr>
+<td>small</td>
+<td><code>Boolean</code></td>
+<td>true for thumbnail, false for full size profile picture</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#ProfilePictureCallback">ProfilePictureCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">// Request full size profile picture from 49xxxxxxxx</span>
+wa.<span class="pl-c1">getProfilePicture</span>(<span class="pl-s"><span class="pl-pds">'</span>49xxxxxxxx<span class="pl-pds">'</span></span>, <span class="pl-c1">false</span>, <span class="pl-k">function</span>(<span class="pl-smi">res</span>) {
+  fs.<span class="pl-c1">writeFile</span>(<span class="pl-s"><span class="pl-pds">'</span>whatsapi/media/profilepic-<span class="pl-pds">'</span></span><span class="pl-k">+</span>res.<span class="pl-c1">from</span><span class="pl-k">+</span>(res.<span class="pl-c1">isPreview</span><span class="pl-k">?</span><span class="pl-s"><span class="pl-pds">'</span>-preview<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>-full<span class="pl-pds">'</span></span>)<span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>.jpg<span class="pl-pds">'</span></span>, res.<span class="pl-c1">pictureData</span>); 
+});</pre></div>
+
+<p><a name="user-content-WhatsApi#requestExtendAccount"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugrequestextendaccount" class="anchor" href="#whatsapidebugrequestextendaccount" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.requestExtendAccount()</h3>
+
+<p>Extend account by one year from now</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<a name="user-content-WhatsApi#sendIsOnline"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsendisonline" class="anchor" href="#whatsapidebugsendisonline" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.sendIsOnline()</h3>
+
+<p>Send online presence for the current user</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<a name="user-content-WhatsApi#sendIsOffline"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsendisoffline" class="anchor" href="#whatsapidebugsendisoffline" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.sendIsOffline()</h3>
+
+<p>Send offline presence for the current user</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<a name="user-content-WhatsApi#sendComposingState"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsendcomposingstateto" class="anchor" href="#whatsapidebugsendcomposingstateto" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.sendComposingState(to)</h3>
+
+<p>Send composing state to the given user</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td><code>String</code></td>
+<td>Phone number</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#sendPausedState"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsendpausedstateto" class="anchor" href="#whatsapidebugsendpausedstateto" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.sendPausedState(to)</h3>
+
+<p>Send stopped typing/composing to the given user</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td><code>String</code></td>
+<td>Phone number</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#sendPresenceSubscription"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsendpresencesubscriptionwho" class="anchor" href="#whatsapidebugsendpresencesubscriptionwho" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.sendPresenceSubscription(who)</h3>
+
+<p>Request subscription to presence of the given user</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>who</td>
+<td><code>String</code></td>
+<td>Phone number</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#sendPresenceUnsubscription"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsendpresenceunsubscriptionwho" class="anchor" href="#whatsapidebugsendpresenceunsubscriptionwho" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.sendPresenceUnsubscription(who)</h3>
+
+<p>Requst unsubscription to presence for the given user</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>who</td>
+<td><code>String</code></td>
+<td>Phone number</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#requestGroupsList"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugrequestgroupslisttype-callback" class="anchor" href="#whatsapidebugrequestgroupslisttype-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.requestGroupsList(type, callback)</h3>
+
+<p>Request a filtered list of groups</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><code>String</code></td>
+<td>(optional) Groups list filter, 'owning' or 'participating'</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupsListCallback">GroupsListCallback</a></code></td>
+<td>Called when the response is received</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">requestGroupList</span>(<span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">array</span>) { });</pre></div>
+
+<p><a name="user-content-WhatsApi#requestGroupInfo"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugrequestgroupinfogroupid-callback" class="anchor" href="#whatsapidebugrequestgroupinfogroupid-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.requestGroupInfo(groupId, callback)</h3>
+
+<p>Request info for a group</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupId</td>
+<td><code>String</code></td>
+<td>The ID of the group to request info for</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupInfoCallback">GroupInfoCallback</a></code></td>
+<td>Called when the response is received</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#createGroup"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugcreategroupsubject-numbers-callback" class="anchor" href="#whatsapidebugcreategroupsubject-numbers-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.createGroup(subject, numbers, callback)</h3>
+
+<p>Creates a new group</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subject</td>
+<td><code>String</code></td>
+<td>Subject/topic/name of the group</td>
+</tr>
+<tr>
+<td>numbers</td>
+<td><code>Array.&lt;String&gt;</code></td>
+<td>Array of phone numbers to be added as participants to the group</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupCreatedCallback">GroupCreatedCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">createGroup</span>(<span class="pl-s"><span class="pl-pds">'</span>Group name<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>39xxxxxxxxxx<span class="pl-pds">'</span></span>);
+<span class="pl-c">// or</span>
+wa.<span class="pl-c1">createGroup</span>(<span class="pl-s"><span class="pl-pds">'</span>Group name<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>39xxxxxxxxxx<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>31xxxxxxxxxx<span class="pl-pds">'</span></span>]);</pre></div>
+
+<p><a name="user-content-WhatsApi#addGroupParticipants"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugaddgroupparticipantsgroupid-numbers-callback" class="anchor" href="#whatsapidebugaddgroupparticipantsgroupid-numbers-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.addGroupParticipants(groupId, numbers, callback)</h3>
+
+<p>Add new participants to the group</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupId</td>
+<td><code>String</code></td>
+<td>Group ID</td>
+</tr>
+<tr>
+<td>numbers</td>
+<td><code>Array</code></td>
+<td>Array of participants numbers to add</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupParticipantsCallback">GroupParticipantsCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#removeGroupParticipants"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugremovegroupparticipantsgroupid-numbers-callback" class="anchor" href="#whatsapidebugremovegroupparticipantsgroupid-numbers-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.removeGroupParticipants(groupId, numbers, callback)</h3>
+
+<p>Remove participants from the group</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupId</td>
+<td><code>String</code></td>
+<td>Group ID</td>
+</tr>
+<tr>
+<td>numbers</td>
+<td><code>Array</code></td>
+<td>Array of participants numbers to remove</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupParticipantsCallback">GroupParticipantsCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#promoteGroupParticipants"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugpromotegroupparticipantsgroupid-numbers-callback" class="anchor" href="#whatsapidebugpromotegroupparticipantsgroupid-numbers-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.promoteGroupParticipants(groupId, numbers, callback)</h3>
+
+<p>Promote participants as admin of the group</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupId</td>
+<td><code>String</code></td>
+<td>Group ID</td>
+</tr>
+<tr>
+<td>numbers</td>
+<td><code>Array</code></td>
+<td>Array of participants numbers to promote</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupParticipantsCallback">GroupParticipantsCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#demoteGroupParticipants"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugdemotegroupparticipantsgroupid-numbers-callback" class="anchor" href="#whatsapidebugdemotegroupparticipantsgroupid-numbers-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.demoteGroupParticipants(groupId, numbers, callback)</h3>
+
+<p>Demote participants from being admin of the group</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupId</td>
+<td><code>String</code></td>
+<td>Group ID</td>
+</tr>
+<tr>
+<td>numbers</td>
+<td><code>Array</code></td>
+<td>Array of participants numbers to demote</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupParticipantsCallback">GroupParticipantsCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#requestGroupsLeave"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugrequestgroupsleavegroupids-callback" class="anchor" href="#whatsapidebugrequestgroupsleavegroupids-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.requestGroupsLeave(groupIds, callback)</h3>
+
+<p>Request to leave groups</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupIds</td>
+<td><code>Array.&lt;String&gt;</code></td>
+<td>Group IDs you want to leave</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupLeaveCallback">GroupLeaveCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#requestGroupLeave"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugrequestgroupleavegroupid-callback" class="anchor" href="#whatsapidebugrequestgroupleavegroupid-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.requestGroupLeave(groupId, callback)</h3>
+
+<p>Request to leave a single group</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupId</td>
+<td><code>String</code></td>
+<td>Group ID you want to leave</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupLeaveCallback">GroupLeaveCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#setGroupSubject"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsetgroupsubjectgroupid-subject-callback" class="anchor" href="#whatsapidebugsetgroupsubjectgroupid-subject-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.setGroupSubject(groupId, subject, callback)</h3>
+
+<p>Update the subject for the given group</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupId</td>
+<td><code>String</code></td>
+<td>ID of the group you want to change the subject of</td>
+</tr>
+<tr>
+<td>subject</td>
+<td><code>String</code></td>
+<td>New subject/topic/name text</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#GroupSubjectCallback">GroupSubjectCallback</a></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#sendMessage"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsendmessageto-message-msgid-callback" class="anchor" href="#whatsapidebugsendmessageto-message-msgid-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.sendMessage(to, message, msgid, callback)</h3>
+
+<p>Send a text message</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<strong>Emits</strong>: <code><a href="#event_clientReceived">clientReceived</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td><code>String</code></td>
+<td>Recipient number or JID</td>
+</tr>
+<tr>
+<td>message</td>
+<td><code>String</code></td>
+<td>Message text content</td>
+</tr>
+<tr>
+<td>msgid</td>
+<td><code>String</code></td>
+<td>Message ID (optional)</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the server receives the message</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#sendLocation"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsendlocationto-lat-lng-name-url-msgid-callback" class="anchor" href="#whatsapidebugsendlocationto-lat-lng-name-url-msgid-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.sendLocation(to, lat, lng, name, url, msgid, callback)</h3>
+
+<p>Send a location message</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<strong>Emits</strong>: <code><a href="#event_clientReceived">clientReceived</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td><code>String</code></td>
+<td>Recipient number or JID</td>
+</tr>
+<tr>
+<td>lat</td>
+<td><code>Number</code></td>
+<td>Latitude</td>
+</tr>
+<tr>
+<td>lng</td>
+<td><code>Number</code></td>
+<td>Longitude</td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>String</code></td>
+<td>Place name (optional)</td>
+</tr>
+<tr>
+<td>url</td>
+<td><code>String</code></td>
+<td>Place URL (optional)</td>
+</tr>
+<tr>
+<td>msgid</td>
+<td><code>String</code></td>
+<td>Message ID (optional)</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the server receives the message</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#sendImage"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsendimageto-filepath-caption-msgid-callback" class="anchor" href="#whatsapidebugsendimageto-filepath-caption-msgid-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.sendImage(to, filepath, caption, msgid, callback)</h3>
+
+<p>Send an image to the specified destination. An optional caption an message ID can be specified.</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<strong>Emits</strong>: <code><a href="#event_clientReceived">clientReceived</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td><code>String</code></td>
+<td>Destination phone number in international format, without '+'. E.g. 491234567890</td>
+</tr>
+<tr>
+<td>filepath</td>
+<td><code>String</code></td>
+<td>File path or URL of the image to send</td>
+</tr>
+<tr>
+<td>caption</td>
+<td><code>String</code></td>
+<td>(optional) caption to display together with the image</td>
+</tr>
+<tr>
+<td>msgid</td>
+<td><code>String</code></td>
+<td>(optional) message ID</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the server receives the message</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">sendImage</span>(<span class="pl-s"><span class="pl-pds">'</span>491234567890<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>http://lorempixel.com/800/600/?.jpg<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>This is a caption<span class="pl-pds">'</span></span>);</pre></div>
+
+<p><a name="user-content-WhatsApi#sendVideo"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsendvideoto-filepath-caption-msgid-callback" class="anchor" href="#whatsapidebugsendvideoto-filepath-caption-msgid-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.sendVideo(to, filepath, caption, msgid, callback)</h3>
+
+<p>Send a video to the specified destination. An optional caption an message ID can be specified.</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<strong>Emits</strong>: <code><a href="#event_clientReceived">clientReceived</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td><code>String</code></td>
+<td>Destination phone number in international format, without '+'. E.g. 491234567890</td>
+</tr>
+<tr>
+<td>filepath</td>
+<td><code>String</code></td>
+<td>File path or URL of the video to send</td>
+</tr>
+<tr>
+<td>caption</td>
+<td><code>String</code></td>
+<td>(optional) caption to display together with the video</td>
+</tr>
+<tr>
+<td>msgid</td>
+<td><code>String</code></td>
+<td>(optional) message ID</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the server receives the messages</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">sendVideo</span>(<span class="pl-s"><span class="pl-pds">'</span>491234567890<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Big Buck Bunny<span class="pl-pds">'</span></span>);</pre></div>
+
+<p><a name="user-content-WhatsApi#sendAudio"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsendaudioto-filepath-msgid-callback" class="anchor" href="#whatsapidebugsendaudioto-filepath-msgid-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.sendAudio(to, filepath, msgid, callback)</h3>
+
+<p>Send an audio file to the specified destination.</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<strong>Emits</strong>: <code><a href="#event_clientReceived">clientReceived</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td><code>String</code></td>
+<td>Destination phone number in international format, without '+'. E.g. 491234567890</td>
+</tr>
+<tr>
+<td>filepath</td>
+<td><code>String</code></td>
+<td>File path or URL of the audio file to send</td>
+</tr>
+<tr>
+<td>msgid</td>
+<td><code>String</code></td>
+<td>(optional) message ID</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the server receives the messages</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">sendAudio</span>(<span class="pl-s"><span class="pl-pds">'</span>491234567890<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>http://archive.org/download/Exodus1KJV/02001_Exodus_1.mp3<span class="pl-pds">'</span></span>);</pre></div>
+
+<p><a name="user-content-WhatsApi#sendVcard"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsendvcardto-filepath-name-msgid-callback" class="anchor" href="#whatsapidebugsendvcardto-filepath-name-msgid-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.sendVcard(to, filepath, name, msgid, callback)</h3>
+
+<p>Send a vCard file to the specified destination.</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<strong>Emits</strong>: <code><a href="#event_clientReceived">clientReceived</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td><code>String</code></td>
+<td>Destination phone number in international format, without '+'. E.g. 491234567890</td>
+</tr>
+<tr>
+<td>filepath</td>
+<td><code>String</code></td>
+<td>File path or URL of the vCard file to send</td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>String</code></td>
+<td>Name of the person in the vcard</td>
+</tr>
+<tr>
+<td>msgid</td>
+<td><code>String</code></td>
+<td>(optional) message ID</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the server receives the messages</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">sendVcard</span>(<span class="pl-s"><span class="pl-pds">'</span>491234567890<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>http://www.w3.org/2002/12/cal/vcard-examples/john-doe.vcf<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>John Doe<span class="pl-pds">'</span></span>);</pre></div>
+
+<p><a name="user-content-WhatsApi#JIDtoId"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugjidtoidjid" class="anchor" href="#whatsapidebugjidtoidjid" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.JIDtoId(jid)</h3>
+
+<p>Convert a group JID to ID only</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jid</td>
+<td><code>String</code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#createPongNode"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugcreatepongnodemessageid--node" class="anchor" href="#whatsapidebugcreatepongnodemessageid--node" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.createPongNode(messageId) ⇒ <code><a href="#Node">Node</a></code>
+</h3>
+
+<p>Create a pong node, to be sent in response to ping</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<strong>Returns</strong>: <code><a href="#Node">Node</a></code> - Created node  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>messageId</td>
+<td><code>String</code></td>
+<td>The ping message ID</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#sendMessageReceipt"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugsendmessagereceiptmessage-type" class="anchor" href="#whatsapidebugsendmessagereceiptmessage-type" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.sendMessageReceipt(message, type)</h3>
+
+<p>Send the receipt for a message</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td><code>Object</code></td>
+<td></td>
+</tr>
+<tr>
+<td>type</td>
+<td><code>String</code></td>
+<td>
+<code>read</code> or null for standard receipts</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#createAckNode"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugcreateacknodenode--node" class="anchor" href="#whatsapidebugcreateacknodenode--node" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.createAckNode(node) ⇒ <code><a href="#Node">Node</a></code>
+</h3>
+
+<p>Create a 'ack' node, to be sent when a 'receipt' node is received</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code><br>
+<strong>Returns</strong>: <code><a href="#Node">Node</a></code> - Created node  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>node</td>
+<td><code><a href="#Node">Node</a></code></td>
+<td>The 'receipt' node</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#requestServerProperties"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugrequestserverpropertiescallback" class="anchor" href="#whatsapidebugrequestserverpropertiescallback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.requestServerProperties(callback)</h3>
+
+<p>Request WhatsApp server properties</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Called when the properties are received</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApi#requestServicePricing"></a></p>
+
+<h3>
+<a id="user-content-whatsapidebugrequestservicepricinglanguage-country-callback" class="anchor" href="#whatsapidebugrequestservicepricinglanguage-country-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>whatsApiDebug.requestServicePricing(language, country, callback)</h3>
+
+<p>Request WhatsApp service pricing</p>
+
+<p><strong>Kind</strong>: instance method of <code><a href="#WhatsApiDebug">WhatsApiDebug</a></code>  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>language</td>
+<td><code>String</code></td>
+<td>Language code (e.g. 'en')</td>
+</tr>
+<tr>
+<td>country</td>
+<td><code>String</code></td>
+<td>Country code (e.g. 'us')</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code><a href="#PricingCallback">PricingCallback</a></code></td>
+<td>Called when the pricing is recived</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-createAdapter"></a></p>
+
+<h2>
+<a id="user-content-createadapterconfig-debug-reader-writer-processor-transport--whatsapi" class="anchor" href="#createadapterconfig-debug-reader-writer-processor-transport--whatsapi" aria-hidden="true"><span class="octicon octicon-link"></span></a>createAdapter(config, debug, reader, writer, processor, transport) ⇒ <code><a href="#WhatsApi">WhatsApi</a></code>
+</h2>
+
+<p>Create a new instance of the WhatsApi class</p>
+
+<p><strong>Kind</strong>: global function<br>
+<strong>Returns</strong>: <code><a href="#WhatsApi">WhatsApi</a></code> - Created WhatsApi instance  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config</td>
+<td><code><a href="#WhatsApiConfig">WhatsApiConfig</a></code></td>
+<td>Configuration object</td>
+</tr>
+<tr>
+<td>debug</td>
+<td><code>Boolean</code></td>
+<td>Enable debug mode, which outputs all the nodes</td>
+</tr>
+<tr>
+<td>reader</td>
+<td><code><a href="#Reader">Reader</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td>writer</td>
+<td><code><a href="#Writer">Writer</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td>processor</td>
+<td><code>Object</code></td>
+<td></td>
+</tr>
+<tr>
+<td>transport</td>
+<td><code>Object</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-event_receivedMessage"></a></p>
+
+<h2>
+<a id="user-content-receivedmessage" class="anchor" href="#receivedmessage" aria-hidden="true"><span class="octicon octicon-link"></span></a>"receivedMessage"</h2>
+
+<p>receivedMessage - emitted when a new text message is received</p>
+
+<p><strong>Kind</strong>: event emitted<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td><code><a href="#Message">Message</a></code></td>
+<td>Message object</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-event_receivedLocation"></a></p>
+
+<h2>
+<a id="user-content-receivedlocation" class="anchor" href="#receivedlocation" aria-hidden="true"><span class="octicon octicon-link"></span></a>"receivedLocation"</h2>
+
+<p>receivedLocation - emitted when a location message is received</p>
+
+<p><strong>Kind</strong>: event emitted<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>location</td>
+<td><code><a href="#Location">Location</a></code></td>
+<td>Location object</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">on</span>(<span class="pl-s"><span class="pl-pds">'</span>receivedLocation<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">location</span>){
+  <span class="pl-en">console</span><span class="pl-c1">.log</span>(
+    <span class="pl-s"><span class="pl-pds">"</span>Received location:<span class="pl-cce">\n</span> From: %s<span class="pl-cce">\n</span> id: %s<span class="pl-cce">\n</span> date: %s<span class="pl-cce">\n</span> notify: %s<span class="pl-cce">\n</span> latitude: %d<span class="pl-cce">\n</span> longitude: %s<span class="pl-cce">\n</span> name: %s <span class="pl-cce">\n</span> url: %s<span class="pl-pds">"</span></span>,
+    location.<span class="pl-c1">from</span>, location.<span class="pl-c1">id</span>, location.<span class="pl-c1">date</span>.<span class="pl-c1">toString</span>(), location.<span class="pl-c1">notify</span>, location.<span class="pl-c1">latitude</span>, location.<span class="pl-c1">longitude</span>, location.<span class="pl-c1">name</span>, location.<span class="pl-c1">url</span>
+  );
+  fs.<span class="pl-c1">writeFile</span>(<span class="pl-s"><span class="pl-pds">'</span>whatsapi/media/location-<span class="pl-pds">'</span></span><span class="pl-k">+</span>location.<span class="pl-c1">latitude</span><span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>-<span class="pl-pds">'</span></span><span class="pl-k">+</span>location.<span class="pl-c1">longitude</span><span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>-thumb.jpg<span class="pl-pds">'</span></span>, location.<span class="pl-c1">thumbData</span>);
+});</pre></div>
+
+<p><a name="user-content-event_receivedImage"></a></p>
+
+<h2>
+<a id="user-content-receivedimage" class="anchor" href="#receivedimage" aria-hidden="true"><span class="octicon octicon-link"></span></a>"receivedImage"</h2>
+
+<p>Is fired when an image is received</p>
+
+<p><strong>Kind</strong>: event emitted<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>image</td>
+<td><code><a href="#Image">Image</a></code></td>
+<td>Image object</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">on</span>(<span class="pl-s"><span class="pl-pds">'</span>receivedImage<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">image</span>){
+  <span class="pl-en">console</span><span class="pl-c1">.log</span>(
+    <span class="pl-s"><span class="pl-pds">"</span>Received image:<span class="pl-cce">\n</span> From: %s<span class="pl-cce">\n</span> id: %s<span class="pl-cce">\n</span> date: %s<span class="pl-cce">\n</span> notify: %s<span class="pl-cce">\n</span> size: %d bytes<span class="pl-cce">\n</span> url: %s<span class="pl-cce">\n</span> caption: %s <span class="pl-cce">\n</span> file: %s<span class="pl-cce">\n</span> encoding: %s<span class="pl-cce">\n</span> ip: %s<span class="pl-cce">\n</span> mimetype: %s<span class="pl-cce">\n</span> filehash: %s<span class="pl-cce">\n</span> width: %d px<span class="pl-cce">\n</span> height: %d px<span class="pl-pds">"</span></span>,
+    image.<span class="pl-c1">from</span>, image.<span class="pl-c1">id</span>, image.<span class="pl-c1">date</span>.<span class="pl-c1">toString</span>(), image.<span class="pl-c1">notify</span>, image.<span class="pl-c1">size</span>, image.<span class="pl-c1">url</span>, image.<span class="pl-c1">caption</span>, image.<span class="pl-c1">file</span>, image.<span class="pl-c1">encoding</span>, image.<span class="pl-c1">ip</span>, image.<span class="pl-c1">mimetype</span>, image.<span class="pl-c1">filehash</span>, image.<span class="pl-c1">width</span>, image.<span class="pl-c1">height</span>
+  );
+  fs.<span class="pl-c1">writeFile</span>(<span class="pl-s"><span class="pl-pds">'</span>whatsapi/media/image-<span class="pl-pds">'</span></span><span class="pl-k">+</span>image.<span class="pl-c1">from</span><span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>-<span class="pl-pds">'</span></span><span class="pl-k">+</span>image.<span class="pl-c1">file</span><span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>-thumb.jpg<span class="pl-pds">'</span></span>, image.<span class="pl-c1">thumbData</span>); 
+  wa.<span class="pl-c1">downloadMediaFile</span>(image.<span class="pl-c1">url</span>,<span class="pl-k">function</span>(<span class="pl-smi">err</span>,<span class="pl-smi">path</span>){
+    <span class="pl-k">if</span>(err){
+      <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>error storing file: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> err);
+    }<span class="pl-k">else</span>{
+      <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>file downloaded at: <span class="pl-pds">'</span></span><span class="pl-k">+</span> path);
+    }
+  });
+});</pre></div>
+
+<p><a name="user-content-event_receivedVideo"></a></p>
+
+<h2>
+<a id="user-content-receivedvideo" class="anchor" href="#receivedvideo" aria-hidden="true"><span class="octicon octicon-link"></span></a>"receivedVideo"</h2>
+
+<p>Is fired when a video is received</p>
+
+<p><strong>Kind</strong>: event emitted<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>video</td>
+<td><code><a href="#Video">Video</a></code></td>
+<td>Video object</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">on</span>(<span class="pl-s"><span class="pl-pds">'</span>receivedVideo<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">video</span>){
+<span class="pl-en">console</span><span class="pl-c1">.log</span>(
+    <span class="pl-s"><span class="pl-pds">"</span>Received video:<span class="pl-cce">\n</span> from: %s <span class="pl-cce">\n</span> id: %s<span class="pl-cce">\n</span> date: %s<span class="pl-cce">\n</span> notify: %s<span class="pl-cce">\n</span> url: %s <span class="pl-cce">\n</span> caption: %s <span class="pl-cce">\n</span> seconds: %s <span class="pl-cce">\n</span> file: %s <span class="pl-cce">\n</span> encoding: %s <span class="pl-cce">\n</span> size: %s bytes<span class="pl-cce">\n</span> ip: %s <span class="pl-cce">\n</span> mimetype: %s <span class="pl-cce">\n</span> filehash: %s <span class="pl-cce">\n</span> duration: %s sec<span class="pl-cce">\n</span> vcodec: %s <span class="pl-cce">\n</span> width: %s px<span class="pl-cce">\n</span> height: %s px<span class="pl-cce">\n</span> fps: %s <span class="pl-cce">\n</span> vbitrate: %s bit/s<span class="pl-cce">\n</span> acodec: %s <span class="pl-cce">\n</span> asampfreq: %s <span class="pl-cce">\n</span> asampfmt: %s <span class="pl-cce">\n</span> abitrate %s bit/s<span class="pl-pds">"</span></span>,
+    video.<span class="pl-c1">from</span>, video.<span class="pl-c1">id</span>, video.<span class="pl-c1">date</span>.<span class="pl-c1">toString</span>(), video.<span class="pl-c1">notify</span>, video.<span class="pl-c1">url</span>, video.<span class="pl-c1">caption</span>, video.<span class="pl-c1">seconds</span>, video.<span class="pl-c1">file</span>, video.<span class="pl-c1">encoding</span>, video.<span class="pl-c1">size</span>, video.<span class="pl-c1">ip</span>, video.<span class="pl-c1">mimetype</span>, video.<span class="pl-c1">filehash</span>, video.<span class="pl-c1">duration</span>, video.<span class="pl-c1">vcodec</span>, video.<span class="pl-c1">width</span>, video.<span class="pl-c1">height</span>, video.<span class="pl-c1">fps</span>, video.<span class="pl-c1">vbitrate</span>, video.<span class="pl-c1">acodec</span>, video.<span class="pl-c1">asampfreq</span>, video.<span class="pl-c1">asampfmt</span>, video.<span class="pl-c1">abitrate</span>
+  );
+  fs.<span class="pl-c1">writeFile</span>(<span class="pl-s"><span class="pl-pds">'</span>whatsapi/media/video-<span class="pl-pds">'</span></span><span class="pl-k">+</span>video.<span class="pl-c1">from</span><span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>-<span class="pl-pds">'</span></span><span class="pl-k">+</span>video.<span class="pl-c1">file</span><span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>-thumb.jpg<span class="pl-pds">'</span></span>, video.<span class="pl-c1">thumbData</span>); 
+  wa.<span class="pl-c1">downloadMediaFile</span>(video.<span class="pl-c1">url</span>, <span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">path</span>){
+    <span class="pl-k">if</span>(err){
+      <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>error storing file: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> err);
+    }<span class="pl-k">else</span>{
+      <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>file downloaded at: <span class="pl-pds">'</span></span><span class="pl-k">+</span> path);
+    }
+  });
+});</pre></div>
+
+<p><a name="user-content-event_receivedAudio"></a></p>
+
+<h2>
+<a id="user-content-receivedaudio" class="anchor" href="#receivedaudio" aria-hidden="true"><span class="octicon octicon-link"></span></a>"receivedAudio"</h2>
+
+<p>Is fired when an audio file is received</p>
+
+<p><strong>Kind</strong>: event emitted<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>audio</td>
+<td><code><a href="#Audio">Audio</a></code></td>
+<td>Audio object</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">on</span>(<span class="pl-s"><span class="pl-pds">'</span>receivedAudio<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">audio</span>){
+  <span class="pl-en">console</span><span class="pl-c1">.log</span>(
+    <span class="pl-s"><span class="pl-pds">"</span>Received audio:<span class="pl-cce">\n</span> from: %s<span class="pl-cce">\n</span> id: %s<span class="pl-cce">\n</span> date: %s<span class="pl-cce">\n</span> notify: %s<span class="pl-cce">\n</span> seconds: %s<span class="pl-cce">\n</span> size: %s<span class="pl-cce">\n</span> url: %s<span class="pl-cce">\n</span> file: %s<span class="pl-cce">\n</span> origin: %s<span class="pl-cce">\n</span> ip: %s<span class="pl-cce">\n</span> mimetype: %s<span class="pl-cce">\n</span> filehash: %s<span class="pl-cce">\n</span> duration: %s sec<span class="pl-cce">\n</span> acodec: %s<span class="pl-cce">\n</span> asampfreq: %s<span class="pl-cce">\n</span> abitrate: %s kbit/s<span class="pl-pds">"</span></span>,
+    audio.<span class="pl-c1">from</span>, audio.<span class="pl-c1">id</span>, audio.<span class="pl-c1">date</span>.<span class="pl-c1">toString</span>(), audio.<span class="pl-c1">notify</span>, audio.<span class="pl-c1">seconds</span>, audio.<span class="pl-c1">size</span>, audio.<span class="pl-c1">url</span>, audio.<span class="pl-c1">file</span>, audio.<span class="pl-c1">origin</span>, audio.<span class="pl-c1">ip</span>, audio.<span class="pl-c1">mimetype</span>, audio.<span class="pl-c1">filehash</span>, audio.<span class="pl-c1">duration</span>, audio.<span class="pl-c1">acodec</span>, audio.<span class="pl-c1">asampfreq</span>, audio.<span class="pl-c1">abitrate</span>
+  );
+  wa.<span class="pl-c1">downloadMediaFile</span>(audio.<span class="pl-c1">url</span>, <span class="pl-k">function</span>(<span class="pl-smi">err</span>,<span class="pl-smi">path</span>){
+    <span class="pl-k">if</span>(err){
+      <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>error storing file: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> err);
+    }<span class="pl-k">else</span>{
+      <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>file downloaded at: <span class="pl-pds">'</span></span><span class="pl-k">+</span> path);
+    }
+  });
+});</pre></div>
+
+<p><a name="user-content-event_receivedVcard"></a></p>
+
+<h2>
+<a id="user-content-receivedvcard" class="anchor" href="#receivedvcard" aria-hidden="true"><span class="octicon octicon-link"></span></a>"receivedVcard"</h2>
+
+<p>Is fired when a vCard file is received</p>
+
+<p><strong>Kind</strong>: event emitted<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vcard</td>
+<td><code><a href="#Vcard">Vcard</a></code></td>
+<td>vCard object</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-js"><pre>wa.<span class="pl-c1">on</span>(<span class="pl-s"><span class="pl-pds">'</span>receivedVcard<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">vcard</span>){
+  <span class="pl-en">console</span><span class="pl-c1">.log</span>(
+    <span class="pl-s"><span class="pl-pds">"</span>Received vCard:<span class="pl-cce">\n</span> From: %s<span class="pl-cce">\n</span> id: %s<span class="pl-cce">\n</span> date: %s<span class="pl-cce">\n</span> notify: %s<span class="pl-cce">\n</span> name: %s<span class="pl-pds">"</span></span>,
+    vcard.<span class="pl-c1">from</span>, vcard.<span class="pl-c1">id</span>, vcard.<span class="pl-c1">date</span>.<span class="pl-c1">toString</span>(), vcard.<span class="pl-c1">notify</span>, vcard.<span class="pl-c1">name</span>
+  );
+  fs.<span class="pl-c1">writeFile</span>(<span class="pl-s"><span class="pl-pds">'</span>whatsapi/media/vcard-<span class="pl-pds">'</span></span><span class="pl-k">+</span>vcard.<span class="pl-c1">from</span><span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>-<span class="pl-pds">'</span></span><span class="pl-k">+</span>vcard.<span class="pl-c1">name</span><span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>.vcard<span class="pl-pds">'</span></span>, vcard.<span class="pl-c1">vcardData</span>);
+});</pre></div>
+
+<p><a name="user-content-event_clientReceived"></a></p>
+
+<h2>
+<a id="user-content-clientreceived-args" class="anchor" href="#clientreceived-args" aria-hidden="true"><span class="octicon octicon-link"></span></a>"clientReceived" (args)</h2>
+
+<p>Emitted when a client received your message</p>
+
+<p><strong>Kind</strong>: event emitted  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>args</td>
+<td><code><a href="#ClientReceived">ClientReceived</a></code></td>
+<td>Information about the event</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-event_offlineCount"></a></p>
+
+<h2>
+<a id="user-content-offlinecount-count" class="anchor" href="#offlinecount-count" aria-hidden="true"><span class="octicon octicon-link"></span></a>"offlineCount" (count)</h2>
+
+<p>Emitted when the count of messages received while offline is received</p>
+
+<p><strong>Kind</strong>: event emitted  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>count</td>
+<td><code>Number</code></td>
+<td>Count of messages/notifications</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-event_presence"></a></p>
+
+<h2>
+<a id="user-content-presence-presence" class="anchor" href="#presence-presence" aria-hidden="true"><span class="octicon octicon-link"></span></a>"presence" (presence)</h2>
+
+<p>Emitted when a presence update node is received</p>
+
+<p><strong>Kind</strong>: event emitted  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>presence</td>
+<td><code>Presence</code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-event_typing"></a></p>
+
+<h2>
+<a id="user-content-typing-type-from-author" class="anchor" href="#typing-type-from-author" aria-hidden="true"><span class="octicon octicon-link"></span></a>"typing" (type, from, author)</h2>
+
+<p>Emitted when a contact is writing or stopped writing a message</p>
+
+<p><strong>Kind</strong>: event emitted  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><code>String</code></td>
+<td>'composing' or 'paused'</td>
+</tr>
+<tr>
+<td>from</td>
+<td><code>String</code></td>
+<td>Contact or group JID</td>
+</tr>
+<tr>
+<td>author</td>
+<td><code>String</code></td>
+<td>If 'from' is a group, the actual contact JID</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-event_notificationStatusUpdated"></a></p>
+
+<h2>
+<a id="user-content-notificationstatusupdated-notification-nodeid" class="anchor" href="#notificationstatusupdated-notification-nodeid" aria-hidden="true"><span class="octicon octicon-link"></span></a>"notificationStatusUpdated" (notification, nodeId)</h2>
+
+<p>Fired when a contact's status has changed</p>
+
+<p><strong>Kind</strong>: event emitted  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>notification</td>
+<td><code><a href="#StatusUpdated">StatusUpdated</a></code></td>
+</tr>
+<tr>
+<td>nodeId</td>
+<td><code>String</code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-event_notificationPictureUpdated"></a></p>
+
+<h2>
+<a id="user-content-notificationpictureupdated-notification-nodeid" class="anchor" href="#notificationpictureupdated-notification-nodeid" aria-hidden="true"><span class="octicon octicon-link"></span></a>"notificationPictureUpdated" (notification, nodeId)</h2>
+
+<p>Fired when a contact's profile picture has changed</p>
+
+<p><strong>Kind</strong>: event emitted  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>notification</td>
+<td><code><a href="#PictureUpdated">PictureUpdated</a></code></td>
+</tr>
+<tr>
+<td>nodeId</td>
+<td><code>String</code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-event_notificationGroupCreated"></a></p>
+
+<h2>
+<a id="user-content-notificationgroupcreated-group-id" class="anchor" href="#notificationgroupcreated-group-id" aria-hidden="true"><span class="octicon octicon-link"></span></a>"notificationGroupCreated" (group, id)</h2>
+
+<p>Fired when a new group has been created</p>
+
+<p><strong>Kind</strong>: event emitted  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>group</td>
+<td><code><a href="#Group">Group</a></code></td>
+<td>Information about the group</td>
+</tr>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td>Notification message ID</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-event_notificationGroupParticipantsChanged"></a></p>
+
+<h2>
+<a id="user-content-notificationgroupparticipantschanged-args-id" class="anchor" href="#notificationgroupparticipantschanged-args-id" aria-hidden="true"><span class="octicon octicon-link"></span></a>"notificationGroupParticipantsChanged" (args, id)</h2>
+
+<p>Fired when a notification about participants is received</p>
+
+<p><strong>Kind</strong>: event emitted  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>args</td>
+<td><code><a href="#ParticipantsChanged">ParticipantsChanged</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td>Notification message ID</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-event_notificationGroupSubjectChanged"></a></p>
+
+<h2>
+<a id="user-content-notificationgroupsubjectchanged-args-id" class="anchor" href="#notificationgroupsubjectchanged-args-id" aria-hidden="true"><span class="octicon octicon-link"></span></a>"notificationGroupSubjectChanged" (args, id)</h2>
+
+<p>Fired when group subject has changed</p>
+
+<p><strong>Kind</strong>: event emitted  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>args</td>
+<td><code>SubjectChanged</code></td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td>Notification message ID</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-Message"></a></p>
+
+<h2>
+<a id="user-content-message--object" class="anchor" href="#message--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>Message : <code>Object</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>body</td>
+<td><code>String</code></td>
+<td>UTF-8 decoded body text message</td>
+</tr>
+<tr>
+<td>from</td>
+<td><code>String</code></td>
+<td>Sender JID</td>
+</tr>
+<tr>
+<td>author</td>
+<td><code>String</code></td>
+<td>If <code>from</code> is a group ID, this is the real sender JID</td>
+</tr>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td>Message ID</td>
+</tr>
+<tr>
+<td>date</td>
+<td><code>Date</code></td>
+<td>Message date/time</td>
+</tr>
+<tr>
+<td>notify</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>isGroup</td>
+<td><code>Boolean</code></td>
+<td>Whether the message comes from a group or not</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-Location"></a></p>
+
+<h2>
+<a id="user-content-location--object" class="anchor" href="#location--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>Location : <code>Object</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from</td>
+<td><code>String</code></td>
+<td>Sender JID</td>
+</tr>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td>Message ID</td>
+</tr>
+<tr>
+<td>date</td>
+<td><code>Date</code></td>
+<td>Message date/time</td>
+</tr>
+<tr>
+<td>notify</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>latitude</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>longitude</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>String</code></td>
+<td>Name of the place</td>
+</tr>
+<tr>
+<td>url</td>
+<td><code>String</code></td>
+<td>URL of the place</td>
+</tr>
+<tr>
+<td>thumbData</td>
+<td><code><a href="#Buffer">Buffer</a></code></td>
+<td>Raw body (thumbnail of the map)</td>
+</tr>
+<tr>
+<td>author</td>
+<td><code>String</code></td>
+<td>If the message comes from a group, the real sender jid</td>
+</tr>
+<tr>
+<td>isGroup</td>
+<td><code>Boolean</code></td>
+<td>Whether the message comes from a group or not</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-Image"></a></p>
+
+<h2>
+<a id="user-content-image--object" class="anchor" href="#image--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>Image : <code>Object</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td><code>Date</code></td>
+<td>Message date/time</td>
+</tr>
+<tr>
+<td>notify</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>size</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>url</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>caption</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>file</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>encoding</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>ip</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>mimetype</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>filehash</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>width</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>height</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>thumbData</td>
+<td><code><a href="#Buffer">Buffer</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td>author</td>
+<td><code>String</code></td>
+<td>If the message comes from a group, the real sender jid</td>
+</tr>
+<tr>
+<td>isGroup</td>
+<td><code>Boolean</code></td>
+<td>Whether the message comes from a group or not</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-Video"></a></p>
+
+<h2>
+<a id="user-content-video--object" class="anchor" href="#video--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>Video : <code>Object</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td><code>Date</code></td>
+<td>Message date/time</td>
+</tr>
+<tr>
+<td>notify</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>url</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>caption</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>seconds</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>file</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>encoding</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>size</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>ip</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>mimetype</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>filehash</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>duration</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>vcodec</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>width</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>height</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>fps</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>vbitrate</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>acodec</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>asampfreq</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>asampfmt</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>abitrate</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>thumbData</td>
+<td><code><a href="#Buffer">Buffer</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td>author</td>
+<td><code>String</code></td>
+<td>If the message comes from a group, the real sender jid</td>
+</tr>
+<tr>
+<td>isGroup</td>
+<td><code>Boolean</code></td>
+<td>Whether the message comes from a group or not</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-Audio"></a></p>
+
+<h2>
+<a id="user-content-audio--object" class="anchor" href="#audio--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>Audio : <code>Object</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td><code>Date</code></td>
+<td>Message date/time</td>
+</tr>
+<tr>
+<td>notify</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>seconds</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>size</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>url</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>file</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>origin</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>ip</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>mimetype</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>filehash</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>duration</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>acodec</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>asampfreq</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>abitrate</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>author</td>
+<td><code>String</code></td>
+<td>If the message comes from a group, the real sender jid</td>
+</tr>
+<tr>
+<td>isGroup</td>
+<td><code>Boolean</code></td>
+<td>Whether the message comes from a group or not</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-Vcard"></a></p>
+
+<h2>
+<a id="user-content-vcard--object" class="anchor" href="#vcard--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vcard : <code>Object</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td><code>Date</code></td>
+<td>Message date/time</td>
+</tr>
+<tr>
+<td>notify</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>vcardData</td>
+<td><code><a href="#Buffer">Buffer</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td>author</td>
+<td><code>String</code></td>
+<td>If the message comes from a group, the real sender jid</td>
+</tr>
+<tr>
+<td>isGroup</td>
+<td><code>Boolean</code></td>
+<td>Whether the message comes from a group or not</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-WhatsApiConfig"></a></p>
+
+<h2>
+<a id="user-content-whatsapiconfig--object" class="anchor" href="#whatsapiconfig--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>WhatsApiConfig : <code>Object</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msisdn</td>
+<td><code>String</code></td>
+<td>phone number in international format, without leading '+'. E.g. 491234567890</td>
+</tr>
+<tr>
+<td>device_id</td>
+<td><code>String</code></td>
+<td>Device ID (only used for registration)</td>
+</tr>
+<tr>
+<td>username</td>
+<td><code>String</code></td>
+<td>User name</td>
+</tr>
+<tr>
+<td>password</td>
+<td><code>String</code></td>
+<td>Password provided by WhatsApp upon registration</td>
+</tr>
+<tr>
+<td>ccode</td>
+<td><code>String</code></td>
+<td>MCC (Mobile Country Code) See documentation at <a href="http://en.wikipedia.org/wiki/Mobile_country_code">http://en.wikipedia.org/wiki/Mobile_country_code</a>
+</td>
+</tr>
+<tr>
+<td>reconnect</td>
+<td><code>Boolean</code></td>
+<td>specify true for automatic reconnect upon disconnect</td>
+</tr>
+<tr>
+<td>host</td>
+<td><code>String</code></td>
+<td>host URI of the WhatsApp server</td>
+</tr>
+<tr>
+<td>server</td>
+<td><code>String</code></td>
+<td>server URI (not used for connecting)</td>
+</tr>
+<tr>
+<td>gserver</td>
+<td><code>String</code></td>
+<td>group server URI (not used for connecting)</td>
+</tr>
+<tr>
+<td>port</td>
+<td><code>Number</code></td>
+<td>port number to connect to WhatsApp server</td>
+</tr>
+<tr>
+<td>device_type</td>
+<td><code>String</code></td>
+<td>name of the device, used when logging in</td>
+</tr>
+<tr>
+<td>app_version</td>
+<td><code>String</code></td>
+<td>version of the WhatsApp App to use in communication</td>
+</tr>
+<tr>
+<td>ua</td>
+<td><code>String</code></td>
+<td>user agent string to use in communication</td>
+</tr>
+<tr>
+<td>challenge_file</td>
+<td><code>String</code></td>
+<td>path to challenge file</td>
+</tr>
+<tr>
+<td>imageTool</td>
+<td><code>ImageTools</code></td>
+<td>image tool to be used when generating thumbnails</td>
+</tr>
+<tr>
+<td>sendReceipt</td>
+<td><code>Number</code></td>
+<td>0 for none, 1 for standard receipts, 2 for read receipts</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-ResponseError"></a></p>
+
+<h2>
+<a id="user-content-responseerror--object" class="anchor" href="#responseerror--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>ResponseError : <code>Object</code>
+</h2>
+
+<p>Response error; 'null' means success</p>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td><code>String</code></td>
+<td>Error code</td>
+</tr>
+<tr>
+<td>message</td>
+<td><code>String</code></td>
+<td>Error text</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-Group"></a></p>
+
+<h2>
+<a id="user-content-group--object" class="anchor" href="#group--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>Group : <code>Object</code>
+</h2>
+
+<p>Group object</p>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td>Group ID</td>
+</tr>
+<tr>
+<td>creator</td>
+<td><code>String</code></td>
+<td>JID of the creator. Equal to s.whatsapp.net when the creator is self</td>
+</tr>
+<tr>
+<td>creation</td>
+<td><code>Date</code></td>
+<td>Group creation date</td>
+</tr>
+<tr>
+<td>subject</td>
+<td><code>String</code></td>
+<td>Subject (name) of the group</td>
+</tr>
+<tr>
+<td>participants</td>
+<td><code><a href="#Participant">Array.&lt;Participant&gt;</a></code></td>
+<td>Collection of group participants</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-ParticipantsChanged"></a></p>
+
+<h2>
+<a id="user-content-participantschanged--object" class="anchor" href="#participantschanged--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>ParticipantsChanged : <code>Object</code>
+</h2>
+
+<p>Information about a change in group participants</p>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupId</td>
+<td><code>String</code></td>
+<td>Group ID</td>
+</tr>
+<tr>
+<td>action</td>
+<td><code>String</code></td>
+<td>Action performed: 'add', 'remove', 'promote'(, 'demote')</td>
+</tr>
+<tr>
+<td>by</td>
+<td><code>String</code></td>
+<td>JID of the participant who performed the action</td>
+</tr>
+<tr>
+<td>time</td>
+<td><code>Date</code></td>
+<td>When the action has been made</td>
+</tr>
+<tr>
+<td>participants</td>
+<td><code><a href="#Participant">Array.&lt;Participant&gt;</a></code></td>
+<td>Collection of group participants involved in the action</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-Participant"></a></p>
+
+<h2>
+<a id="user-content-participant--object" class="anchor" href="#participant--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>Participant : <code>Object</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jid</td>
+<td><code>String</code></td>
+<td>User JID</td>
+</tr>
+<tr>
+<td>admin</td>
+<td><code>Boolean</code></td>
+<td>Whether the user is admin of the group; 'undefined' when unknown</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-ClientReceived"></a></p>
+
+<h2>
+<a id="user-content-clientreceived--object" class="anchor" href="#clientreceived--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>ClientReceived : <code>Object</code>
+</h2>
+
+<p>Client received the message (receipt)</p>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td>ID of the involved message</td>
+</tr>
+<tr>
+<td>from</td>
+<td><code>String</code></td>
+<td>JID of the user who received the message</td>
+</tr>
+<tr>
+<td>type</td>
+<td><code>String</code></td>
+<td>Event type: 'received' or 'read'</td>
+</tr>
+<tr>
+<td>time</td>
+<td><code>Date</code></td>
+<td>Date of the event</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-LastSeenCallback"></a></p>
+
+<h2>
+<a id="user-content-lastseencallback--function" class="anchor" href="#lastseencallback--function" aria-hidden="true"><span class="octicon octicon-link"></span></a>LastSeenCallback : <code>function</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err</td>
+<td><code><a href="#ResponseError">ResponseError</a></code></td>
+</tr>
+<tr>
+<td>response</td>
+<td><code><a href="#LastSeen">LastSeen</a></code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-LastSeen"></a></p>
+
+<h2>
+<a id="user-content-lastseen--object" class="anchor" href="#lastseen--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>LastSeen : <code>Object</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from</td>
+<td><code>String</code></td>
+<td>User JID</td>
+</tr>
+<tr>
+<td>date</td>
+<td><code>Date</code></td>
+<td>Last seen Date object</td>
+</tr>
+<tr>
+<td>secondsAgo</td>
+<td><code>Number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-GroupsListCallback"></a></p>
+
+<h2>
+<a id="user-content-groupslistcallback--function" class="anchor" href="#groupslistcallback--function" aria-hidden="true"><span class="octicon octicon-link"></span></a>GroupsListCallback : <code>function</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err</td>
+<td><code><a href="#ResponseError">ResponseError</a></code></td>
+</tr>
+<tr>
+<td>groupsList</td>
+<td><code><a href="#Group">Array.&lt;Group&gt;</a></code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-GroupInfoCallback"></a></p>
+
+<h2>
+<a id="user-content-groupinfocallback--function" class="anchor" href="#groupinfocallback--function" aria-hidden="true"><span class="octicon octicon-link"></span></a>GroupInfoCallback : <code>function</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err</td>
+<td><code><a href="#ResponseError">ResponseError</a></code></td>
+</tr>
+<tr>
+<td>group</td>
+<td><code><a href="#Group">Group</a></code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-GroupCreatedCallback"></a></p>
+
+<h2>
+<a id="user-content-groupcreatedcallback--function" class="anchor" href="#groupcreatedcallback--function" aria-hidden="true"><span class="octicon octicon-link"></span></a>GroupCreatedCallback : <code>function</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err</td>
+<td><code><a href="#ResponseError">ResponseError</a></code></td>
+</tr>
+<tr>
+<td>group</td>
+<td><code><a href="#Group">Group</a></code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-GroupParticipantsCallback"></a></p>
+
+<h2>
+<a id="user-content-groupparticipantscallback--function" class="anchor" href="#groupparticipantscallback--function" aria-hidden="true"><span class="octicon octicon-link"></span></a>GroupParticipantsCallback : <code>function</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err</td>
+<td><code><a href="#ResponseError">ResponseError</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td>action</td>
+<td><code>String</code></td>
+<td>Action performed (add, remove, promote, demote)</td>
+</tr>
+<tr>
+<td>change</td>
+<td><code><a href="#GroupParticipantChange">Array.&lt;GroupParticipantChange&gt;</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td>groupId</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-GroupParticipantChange"></a></p>
+
+<h2>
+<a id="user-content-groupparticipantchange" class="anchor" href="#groupparticipantchange" aria-hidden="true"><span class="octicon octicon-link"></span></a>GroupParticipantChange</h2>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jid</td>
+<td><code>String</code></td>
+<td>JID of the user</td>
+</tr>
+<tr>
+<td>error</td>
+<td><code>String</code></td>
+<td>If something went wrong with the change, the error code; otherwise null</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-GroupLeaveCallback"></a></p>
+
+<h2>
+<a id="user-content-groupleavecallback--function" class="anchor" href="#groupleavecallback--function" aria-hidden="true"><span class="octicon octicon-link"></span></a>GroupLeaveCallback : <code>function</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err</td>
+<td><code><a href="#ResponseError">ResponseError</a></code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-GroupSubjectCallback"></a></p>
+
+<h2>
+<a id="user-content-groupsubjectcallback--function" class="anchor" href="#groupsubjectcallback--function" aria-hidden="true"><span class="octicon octicon-link"></span></a>GroupSubjectCallback : <code>function</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err</td>
+<td><code><a href="#ResponseError">ResponseError</a></code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-ProfilePictureCallback"></a></p>
+
+<h2>
+<a id="user-content-profilepicturecallback--function" class="anchor" href="#profilepicturecallback--function" aria-hidden="true"><span class="octicon octicon-link"></span></a>ProfilePictureCallback : <code>function</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err</td>
+<td><code><a href="#ResponseError">ResponseError</a></code></td>
+</tr>
+<tr>
+<td>profilePicture</td>
+<td><code><a href="#ProfilePicture">ProfilePicture</a></code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-ProfilePicture"></a></p>
+
+<h2>
+<a id="user-content-profilepicture--object" class="anchor" href="#profilepicture--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>ProfilePicture : <code>Object</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jid</td>
+<td><code>String</code></td>
+<td>JID of the users the profile picture belongs to</td>
+</tr>
+<tr>
+<td>isPreview</td>
+<td><code>Boolean</code></td>
+<td>Is this a preview (true) or the full picture (false)</td>
+</tr>
+<tr>
+<td>pictureData</td>
+<td><code><a href="#Buffer">Buffer</a></code></td>
+<td>Raw picture data</td>
+</tr>
+<tr>
+<td>pictureId</td>
+<td><code>Number</code></td>
+<td>ID from this picture</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-StatusCallback"></a></p>
+
+<h2>
+<a id="user-content-statuscallback--function" class="anchor" href="#statuscallback--function" aria-hidden="true"><span class="octicon octicon-link"></span></a>StatusCallback : <code>function</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err</td>
+<td><code><a href="#ResponseError">ResponseError</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td>statuses</td>
+<td><code><a href="#Status">Array.&lt;Status&gt;</a></code></td>
+<td>Array of Status objects</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-Status"></a></p>
+
+<h2>
+<a id="user-content-status--object" class="anchor" href="#status--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>Status : <code>Object</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jid</td>
+<td><code>String</code></td>
+<td>JID of the users the status belongs to</td>
+</tr>
+<tr>
+<td>status</td>
+<td><code>String</code></td>
+<td>Status message (UTF-8)</td>
+</tr>
+<tr>
+<td>date</td>
+<td><code>Date</code></td>
+<td>When the status was set</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-SyncCallback"></a></p>
+
+<h2>
+<a id="user-content-synccallback--function" class="anchor" href="#synccallback--function" aria-hidden="true"><span class="octicon octicon-link"></span></a>SyncCallback : <code>function</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err</td>
+<td><code><a href="#ResponseError">ResponseError</a></code></td>
+</tr>
+<tr>
+<td>result</td>
+<td><code><a href="#ContactsSync">ContactsSync</a></code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-ContactsSync"></a></p>
+
+<h2>
+<a id="user-content-contactssync--object" class="anchor" href="#contactssync--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>ContactsSync : <code>Object</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>existingUsers</td>
+<td><code>Array</code></td>
+<td>An array of numbers of users that have a WhatsApp account</td>
+</tr>
+<tr>
+<td>nonExistingUsers</td>
+<td><code>Array</code></td>
+<td>An array of numbers of users that don't have a WhatsApp account</td>
+</tr>
+<tr>
+<td>invalidNumbers</td>
+<td><code>Array</code></td>
+<td>An array of numbers that are invalid according to WhatsApp</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-PricingCallback"></a></p>
+
+<h2>
+<a id="user-content-pricingcallback--function" class="anchor" href="#pricingcallback--function" aria-hidden="true"><span class="octicon octicon-link"></span></a>PricingCallback : <code>function</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef  </p>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err</td>
+<td><code><a href="#ResponseError">ResponseError</a></code></td>
+</tr>
+<tr>
+<td>pricing</td>
+<td><code><a href="#ServicePricing">ServicePricing</a></code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-ServicePricing"></a></p>
+
+<h2>
+<a id="user-content-servicepricing--object" class="anchor" href="#servicepricing--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>ServicePricing : <code>Object</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>price</td>
+<td><code>String</code></td>
+<td>Price with currency symbol</td>
+</tr>
+<tr>
+<td>cost</td>
+<td><code>String</code></td>
+<td>Price number</td>
+</tr>
+<tr>
+<td>currency</td>
+<td><code>String</code></td>
+<td>Currency as string</td>
+</tr>
+<tr>
+<td>expiration</td>
+<td><code>String</code></td>
+<td>Expiration date of the pricing</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-StatusUpdated"></a></p>
+
+<h2>
+<a id="user-content-statusupdated--object" class="anchor" href="#statusupdated--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>StatusUpdated : <code>Object</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from</td>
+<td><code>String</code></td>
+<td>Involved user jid</td>
+</tr>
+<tr>
+<td>value</td>
+<td><code>String</code></td>
+<td>New status value (string)</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="user-content-PictureUpdated"></a></p>
+
+<h2>
+<a id="user-content-pictureupdated--object" class="anchor" href="#pictureupdated--object" aria-hidden="true"><span class="octicon octicon-link"></span></a>PictureUpdated : <code>Object</code>
+</h2>
+
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from</td>
+<td><code>String</code></td>
+<td>Involved user jid</td>
+</tr>
+<tr>
+<td>action</td>
+<td><code>String</code></td>
+<td>
+<code>set</code> or <code>delete</code>
+</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
 
   
   </body>
