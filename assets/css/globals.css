@@ -1,0 +1,41 @@
+body {
+    padding-top: 41px;
+}
+
+#welcome {
+    height: 600px;
+}
+
+.wrapper {
+    width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Navbar */
+.navbar-default {
+    background-color: #383435;
+    border-color: #1e1b1c;
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    background-color: #383435;
+    color: #a29f99;
+}
+
+.navbar-default .navbar-nav>.active>a:hover {
+    background-color: #383435;
+    color: #a29f99;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    background-color: #383435;
+    color: #777;
+}
+
+.navbar-default .navbar-nav>li>a {
+    background-color: #383435;
+    color: #fff;
+    -webkit-transition: color 0.2s;
+}
