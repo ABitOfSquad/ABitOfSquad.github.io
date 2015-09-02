@@ -21,7 +21,7 @@
 <body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container wrapper">
+    <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -33,18 +33,45 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Plugin Documentation</a></li>
+                <li class="active"><a href="./">Home <span class="sr-only">(current)</span></a></li>
+                <li><a href="./docs.html">Plugin Documentation</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<div class="jumbotron" id="welcome">
-    <div class="wrapper">
-        <h1>Squadbot</h1>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Squadbot Plugin API</h1>
     </div>
+</div>
 
+<div class="container">
+    <div class="col-md-9">
+        <h1 id="setup" class="page-header">Plugin setup</h1>
+
+        <h1 id="events" class="page-header">Events</h1>
+
+        <h1 id="protocol" class="page-header">Protocol functions</h1>
+        <h2>Sending messages</h2>
+        <p><span class="label label-success">Whatsapp</span><table class="table table-striped">
+        <tr>
+            <th>Variable</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>msg</code></td>
+            <td>The string you want to send</td>
+        </tr>
+        </table></p>
+    </div>
+    <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation"><a href="#">Plugin Setup</a></li>
+            <li role="presentation"><a href="#">Events</a></li>
+            <li role="presentation"><a href="#">Protocol functions</a></li>
+        </ul>
+    </div>
 </div>
 
 
