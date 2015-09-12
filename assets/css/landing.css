@@ -1,0 +1,87 @@
+.slide {
+    width: 100%;
+    position: relative;
+}
+
+.slide > div {
+    width: 80%;
+    margin: auto;
+}
+
+.slide#title {
+    height: calc(100vh - 52px);
+    margin-top: -10px;
+    position: relative;
+}
+
+#titleCanvas {
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#squadbot {
+    height: 30vw;
+    width: 30vw;
+    position: absolute;
+    left: 5vw;
+    bottom: 0;
+}
+
+#squadbot > img:first-child {
+    height: 100%;
+    width: 100%;
+}
+
+#botPupilLeft, #botPupilRight {
+    width: 12%;
+    height: 12%;
+    position: absolute;
+    top: 23%;
+}
+
+#botPupilLeft {
+    left: 33.48%;
+}
+
+#botPupilRight {
+    left: 54.5%;
+}
+
+#botLeftArm, #botRightArm {
+    width: 87.2%;
+    height: 35.4%;
+    position: absolute;
+    background-size: cover;
+}
+
+#botLeftArm {
+    top: 43%;
+    left: calc(0% - 11.8%);
+    background-image: url("../images/robot_arm_left.png");
+}
+
+#botRightArm {
+    top: 43%;
+    left: 24%;
+    background-image: url("../images/robot_arm_right.png");
+}
+
+#botLeftHand, #botRightHand {
+    width: 43.57798%;
+    height: 43.50282%;
+    background-size: cover;
+    position: absolute;
+}
+
+#botLeftHand {
+    top: 28.5%;
+    left: 1.03211%;
+}
+
+#botRightHand {
+    top: 28.5%;
+    left: 55.8%;
+}
