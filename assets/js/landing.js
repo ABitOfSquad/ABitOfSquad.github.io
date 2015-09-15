@@ -2,6 +2,21 @@ var canvas
 var canvasWidth = window.innerWidth
 var cursorLocation = {"x": 0, "y": 0}
 
+var messages = [
+    {msg: "/about", self: true, time: 1},
+    {msg: "Hi! I'm squadbot!", self: false, time: 2},
+    {msg: "I can do many things", self: false, time: 3},
+    {msg: "Can you?", self: true, time: 4},
+    {msg: "Well, yes.", self: false, time: 5},
+    {msg: "More text", self: false, time: 6},
+    {msg: "More text??", self: true, time: 7},
+    {msg: "More text.", self: false, time: 8},
+    {msg: "That's a lot of text.", self: true, time: 9},
+    {msg: "I mean like A LOT", self: true, time: 10},
+    {msg: "Ikr", self: false, time: 11},
+
+]
+
 function drawCanvas() {
     function makeRect(x, y, color) {
         canvas.beginPath()
@@ -39,6 +54,41 @@ function turnEyes() {
     }
 }
 
+function handleMessage(obj) {
+    setTimeout(function() {
+        var node = document.createElement("div")
+        var messageBackground = document.getElementById("messageBackground");
+        
+        if (obj.self) {
+            node.className = "self"
+            node.innerHTML = "<div><div>You</div><div>" + obj.msg + "</div></div>"
+        }
+        else {
+            node.innerHTML = "<div><div>Squadbot</div><div>" + obj.msg + "</div></div>"
+        }
+        
+        messageBackground.appendChild(node);
+        messageBackground.scrollTop = messageBackground.scrollHeight;
+        
+        if (obj.self) {
+            node.style.height = "60px"
+        }
+        else {
+            node.style.height = "100px"
+        }
+        
+        
+        setTimeout(function() {
+            if (obj.self) {
+                node.children[0].style.right = "25px"
+            }
+            else {
+                node.children[0].style.left = "25px"
+            }
+        }, 200);
+    }, obj.time * 1000);
+}
+
 window.addEventListener("load", function() {
     function recalculateCursor(event) {
         var w = window, b = document.body;
@@ -46,26 +96,54 @@ window.addEventListener("load", function() {
         cursorLocation.y = event.clientY + (w.scrollY || b.scrollTop || b.parentNode.scrollTop || 0);
     }
     
-    canvas = document.getElementById("titleCanvas")
-    canvas.width = canvasWidth
-    canvas = canvas.getContext("2d")
+    // canvas = document.getElementById("titleCanvas")
+    // canvas.width = canvasWidth
+    // canvas = canvas.getContext("2d")
     
-    setInterval(function() {
-        drawCanvas()
-    }, 1000);
+    // setInterval(function() {
+    //     drawCanvas()
+    // }, 1000);
     
     setInterval(function() {
         turnEyes()
-    }, 100);
+    }, 50);
     
     document.addEventListener("mousemove", recalculateCursor)
-    window.addEventListener("scroll", recalculateCursor)
+    document.addEventListener("scroll", recalculateCursor)
     window.addEventListener("resize", recalculateCursor)
+    
+    for (var i = 0; i < messages.length; i++) {
+        handleMessage(messages[i])
+    }
+    
+    setInterval(function () {
+        var ids = ["botLeftArm", "botRightArm", "botLeftHand", "botRightHand"]
+        
+        for (var i = 0; i < 2; i++) {
+            var deg = Math.floor(Math.random() * (40 - -65 + 1)) + -65
+            
+            if (i == 1) {
+                deg *= -1
+            }
+            
+            document.getElementById(ids[i]).style.transform = "rotate(" + deg + "deg)"
+        }
+        
+        for (var i = 2; i < 5; i++) {
+            var deg = Math.floor(Math.random() * (50 - -45 + 1)) + -45
+            
+            if (i == 1) {
+                deg *= -1
+            }
+            
+            document.getElementById(ids[i]).style.transform = "rotate(" + deg + "deg)"
+        }
+    }, 2100);
 })
 
 window.addEventListener("resize", function() {
-    document.getElementById("titleCanvas").width = window.innerWidth
-    canvasWidth = window.innerWidth
-    
-    drawCanvas()
+    // document.getElementById("titleCanvas").width = window.innerWidth
+    // canvasWidth = window.innerWidth
+    // 
+    // drawCanvas()
 })

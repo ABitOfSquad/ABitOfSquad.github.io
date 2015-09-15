@@ -9,9 +9,24 @@
 }
 
 .slide#title {
-    height: calc(100vh - 52px);
-    margin-top: -10px;
+    height: calc(100vh - 51px);
+    margin-top: 10px;
     position: relative;
+    overflow: hidden;
+}
+
+.slide#title h1, .slide#title h4 {
+    text-align: center;
+    font-weight: lighter;
+}
+
+.slide#title h1 {
+    font-size: 800%;
+    padding-top: 5%;
+}
+
+.slide#title h4 {
+    font-size: 192%;
 }
 
 #titleCanvas {
@@ -25,9 +40,8 @@
 #squadbot {
     height: 30vw;
     width: 30vw;
-    position: absolute;
-    left: 5vw;
-    bottom: 0;
+    position: relative;
+    margin-top: 40px;
 }
 
 #squadbot > img:first-child {
@@ -53,20 +67,25 @@
 #botLeftArm, #botRightArm {
     width: 87.2%;
     height: 35.4%;
+    top: 43%;
     position: absolute;
     background-size: cover;
+    transform: rotate(0deg);
+    transition: transform 2s;
+}
+
+#botLeftArm img:last-child, #botRightArm img:last-child {
+    width: 100%;
+    height: 100%;
+    position: absolute;
 }
 
 #botLeftArm {
-    top: 43%;
     left: calc(0% - 11.8%);
-    background-image: url("../images/robot_arm_left.png");
 }
 
 #botRightArm {
-    top: 43%;
     left: 24%;
-    background-image: url("../images/robot_arm_right.png");
 }
 
 #botLeftHand, #botRightHand {
@@ -74,6 +93,8 @@
     height: 43.50282%;
     background-size: cover;
     position: absolute;
+    transform: rotate(0deg);
+    transition: transform 2s;
 }
 
 #botLeftHand {
@@ -84,4 +105,130 @@
 #botRightHand {
     top: 28.5%;
     left: 55.8%;
+}
+
+#messageBackground {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #E3DBD8;
+    z-index: -1;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+#messageBackground > div {
+    width: 100%;
+    position: relative;
+    height: 0px;
+    padding: 10px;
+    overflow: hidden;
+    transition: height .3s;
+}
+
+#messageBackground > div > div {
+    position: absolute;
+    left: -100%;
+    padding: 10px 14px;
+    border-radius: 0px 7px 7px 7px;
+    background: #FFF;
+    font-size: 20px;
+    transition: left .5s ease-out, right .5s ease-out;
+}
+
+#messageBackground > div.self > div {
+    right: -100%;
+    left: auto;
+    border-radius: 7px 0px 7px 7px;
+    background: #E1FFC7;
+}
+
+#messageBackground > div > div::before {
+    position: absolute;
+    left: -15px;
+    top: 0px;
+    height: 22px;
+    width: 15px;
+    background: url("../images/messages/whatsapp.png");
+    content: "";
+}
+
+#messageBackground > div.self > div::before {
+    background: none;
+}
+
+#messageBackground > div.self > div::after {
+    position: absolute;
+    right: -15px;
+    top: 0px;
+    height: 22px;
+    width: 15px;
+    background: url("../images/messages/whatsapp_self.png");
+    content: "";
+}
+
+#messageBackground > div > div > div:first-child {
+    font-weight: bold;
+    color: #59C747;
+    padding-bottom: 5px;
+}
+
+#messageBackground > div.self > div > div:first-child {
+    display: none;
+}
+
+
+
+
+.slide#features > div > div:first-child {
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+.slide#features > div > div:last-child {
+    width: 70%;
+    height: 100%;
+    float: right;
+}
+
+.codeScreen {
+    color: #ecf0f1;
+}
+
+.codeScreen > div {
+    background: #2c3e50;
+    padding: 10px;
+    padding: 3px 9px;
+    font-family: monospace;
+    white-space: pre;
+}
+
+.codeScreen > div::first-letter {
+    color: #5D707A;
+    margin-right: 4px;
+}
+
+.codeScreen > div:nth-child(odd) {
+    background: #34495e;
+}
+
+.codeScreen > div:first-child {
+    background: #1C1F20;
+    white-space: normal;
+    font-family: inherit;
+    color: #90909E;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.codeScreen > div:first-child::first-letter {
+    color: inherit;
+    margin-right: 0px;
+}
+
+
+.codeScreen > div:last-child {
+    border-radius: 0px 0px 10px 10px;
 }
