@@ -129,7 +129,7 @@ window.addEventListener("load", function() {
             document.getElementById(ids[i]).style.transform = "rotate(" + deg + "deg)"
         }
         
-        for (var i = 2; i < 5; i++) {
+        for (var i = 2; i < 4; i++) {
             var deg = Math.floor(Math.random() * (50 - -45 + 1)) + -45
             
             if (i == 1) {
@@ -139,6 +139,10 @@ window.addEventListener("load", function() {
             document.getElementById(ids[i]).style.transform = "rotate(" + deg + "deg)"
         }
     }, 2100);
+    
+    setInterval(function () {
+        document.getElementById("messageBackground").scrollBy(0, 100)
+    }, 10)
 })
 
 window.addEventListener("resize", function() {

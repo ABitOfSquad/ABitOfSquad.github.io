@@ -180,19 +180,242 @@
 }
 
 
+.slide#features > div {
+    height: 400px;
+    width: 80%;
+    margin: auto;
+}
 
+.slide#features > div h6 {
+    font-size: 25px;
+    margin-top: 30px;
+    font-weight: lighter;
+}
+
+.slide#features > div p {
+    font-size: 20px;
+}
 
 .slide#features > div > div:first-child {
-    width: 30%;
+    width: 400px;
+    padding-top: 50px;
     height: 100%;
     float: left;
 }
 
+.slide#features > div:nth-child(even) > div:first-child {
+    float: right;
+}
+
 .slide#features > div > div:last-child {
-    width: 70%;
+    width: calc(100% - 400px);
+    padding: 20px;
     height: 100%;
     float: right;
 }
+
+
+.slide#features > div:nth-child(even) > div:last-child {
+    float: left;
+}
+
+#innerGears {
+    position: relative;
+    width: 365px;
+    height: 300px;
+    margin: auto;
+}
+
+#innerGears img {
+    position: absolute;
+}
+
+#innerGears img:first-child, #innerGears img:last-child {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#innerGears img:nth-child(2) {
+    top: 50%;
+    left: 28%;
+    height: 48.016%;
+    width: 39.451%;
+    
+    animation: gearRotate 20s infinite linear;
+}
+
+#innerGears img:nth-child(3) {
+    top: 42%;
+    left: 64%;
+    height: 33%;
+    width: 27.1136%;
+    
+    animation: gearRotate 10s infinite linear reverse;
+}
+
+#innerGears img:nth-child(4) {
+    top: 74%;
+    left: 70%;
+    height: 25%;
+    width: 20.5406%;
+    
+    animation: gearRotate 7s infinite linear;
+}
+
+@keyframes gearRotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+#spm {
+    position: relative;
+    height: 100%;
+}
+
+#spm > div:first-child {
+    position: absolute;
+    top: 7%;
+    left: 0px;
+    background-image: url("../images/spm_books.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 259px;
+    animation: bookShow 20s infinite;
+}
+
+@keyframes bookShow {
+    0% { /* Start with books hidden */
+        transform: scale(0);
+        opacity: 0;
+        left: 50%;
+        background-position: 0 0;
+    }
+    5% { /* Show whatsapp book */
+        transform: scale(1);
+        opacity: 1;
+        left: 0%;
+        background-position: 0 0;
+    }
+    27% { /* Keep whatsapp book visible */
+        transform: scale(1);
+        opacity: 1;
+        left: 0%;
+        background-position: 0 0;
+    }
+    32% { /* Fade out whatsapp book */
+        transform: scale(1);
+        opacity: 0;
+        left: 0%;
+        background-position: 0 0;
+    }
+    34% { /* Switch to IRC book */
+        transform: scale(0);
+        opacity: 0;
+        left: 50%;
+        background-position: 0 -300px;
+    }
+    39% { /* Show IRC book */
+        transform: scale(1);
+        opacity: 1;
+        left: 0;
+        background-position: 0 -300px;
+    }
+    61% { /* Keep IRC book visible */
+        transform: scale(1);
+        opacity: 1;
+        left: 0;
+        background-position: 0 -300px;
+    }
+    66% { /* Fade out IRC book */
+        transform: scale(1);
+        opacity: 0;
+        left: 0;
+        background-position: 0 -300px;
+    }
+    68% { /* Switch to kik book */
+        transform: scale(0);
+        opacity: 0;
+        left: 50%;
+        background-position: 0 -600px;
+    }
+    73% { /* Show kik book */
+        transform: scale(1);
+        opacity: 1;
+        left: 0;
+        background-position: 0 -600px;
+    }
+    95% { /* Keep kik book visible */
+        transform: scale(1);
+        opacity: 1;
+        left: 0;
+        background-position: 0 -600px;
+    }
+    100% { /* Fade out kik book  */
+        transform: scale(1);
+        opacity: 0;
+        left: 0;
+        background-position: 0 -600px;
+    }
+}
+
+#spm > div:last-child {
+    position: absolute;
+    background-image: url("../images/spm_server.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 60%;
+    width: 29.9%;
+    right: 0;
+    padding-top: 5%;
+    top: 20%;
+}
+
+#spm > div:last-child > div {
+    width: 100%;
+    height: 10px;
+    background-image: url("../images/spm_disk.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    margin-bottom: 7%;
+    animation: blinkingLights .5s infinite step-end;
+}
+
+#spm > div:last-child > div:nth-child(1) {
+    animation-delay: .3s;
+}
+
+#spm > div:last-child > div:nth-child(2) {
+    animation-duration: .3s;
+}
+
+#spm > div:last-child > div:nth-child(3) {
+    animation-delay: .2s;
+}
+
+#spm > div:last-child > div:nth-child(4) {
+    animation-delay: .5s;
+    animation-duration: .7s;
+}
+
+#spm > div:last-child > div:nth-child(5) {
+    animation-delay: .1s;
+}
+
+#spm > div:last-child > div:nth-child(6) {
+    animation-delay: .4s;
+    animation-duration: .7s;
+}
+
+@keyframes blinkingLights {
+    0% {background-position: 0 0; }
+    70% {background-position: 0 -12px; }
+    100% {background-position: 0 0; }
+}
+
 
 .codeScreen {
     color: #ecf0f1;
