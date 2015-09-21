@@ -1,6 +1,6 @@
 var canvas
 var canvasWidth = window.innerWidth
-var cursorLocation = {"x": 0, "y": 0}
+var cursorLocation = {"x": 0, "y": 0, "raw": {"x": 0, "y": 0}}
 
 var messages = [
     {msg: "/about", self: true, time: 1},
@@ -91,9 +91,15 @@ function handleMessage(obj) {
 
 window.addEventListener("load", function() {
     function recalculateCursor(event) {
-        var w = window, b = document.body;
-        cursorLocation.x =  event.clientX + (w.scrollX || b.scrollLeft || b.parentNode.scrollLeft || 0);
-        cursorLocation.y = event.clientY + (w.scrollY || b.scrollTop || b.parentNode.scrollTop || 0);
+        if (event.clientX) {
+            cursorLocation.raw.x = event.clientX
+            cursorLocation.raw.y = event.clientY
+        }
+
+        var  body = document.body
+        
+        cursorLocation.x =  cursorLocation.raw.x + (window.scrollX || body.scrollLeft || body.parentNode.scrollLeft || 0)
+        cursorLocation.y = cursorLocation.raw.y + (window.scrollY || window.pageYOffset || body.parentNode.scrollTop || 0)
     }
     
     // canvas = document.getElementById("titleCanvas")
@@ -108,9 +114,10 @@ window.addEventListener("load", function() {
         turnEyes()
     }, 50);
     
-    document.addEventListener("mousemove", recalculateCursor)
-    document.addEventListener("scroll", recalculateCursor)
+    window.addEventListener("mousemove", recalculateCursor)
+    window.addEventListener("scroll", recalculateCursor)
     window.addEventListener("resize", recalculateCursor)
+    setTimeout(recalculateCursor, 100);
     
     for (var i = 0; i < messages.length; i++) {
         handleMessage(messages[i])

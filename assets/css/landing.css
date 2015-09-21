@@ -187,13 +187,19 @@
 }
 
 .slide#features > div h6 {
-    font-size: 25px;
+    font-size: 28px;
     margin-top: 30px;
+    margin-bottom: 20px;
     font-weight: lighter;
 }
 
 .slide#features > div p {
     font-size: 20px;
+    font-weight: lighter;
+}
+
+.slide#features > div strong {
+    font-weight: normal;
 }
 
 .slide#features > div > div:first-child {
@@ -209,7 +215,7 @@
 
 .slide#features > div > div:last-child {
     width: calc(100% - 400px);
-    padding: 20px;
+    padding: 40px;
     height: 100%;
     float: right;
 }
@@ -278,7 +284,7 @@
     position: absolute;
     top: 7%;
     left: 0px;
-    background-image: url("../images/spm_books.png");
+    background-image: url("../images/features/spm_books.png");
     background-size: cover;
     background-repeat: no-repeat;
     height: 300px;
@@ -363,7 +369,7 @@
 
 #spm > div:last-child {
     position: absolute;
-    background-image: url("../images/spm_server.png");
+    background-image: url("../images/features/spm_server.png");
     background-size: contain;
     background-repeat: no-repeat;
     height: 60%;
@@ -376,7 +382,7 @@
 #spm > div:last-child > div {
     width: 100%;
     height: 10px;
-    background-image: url("../images/spm_disk.png");
+    background-image: url("../images/features/spm_disk.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0 0;
@@ -454,4 +460,78 @@
 
 .codeScreen > div:last-child {
     border-radius: 0px 0px 10px 10px;
+}
+
+.slide#reallyDeepQuestions {
+    background: #ECECEC;
+    font-size: 30px;
+    padding: 30px 0px;
+    text-align: center;
+    font-weight: lighter;
+    color: #888888;
+}
+
+.slide#actions > div > div {
+    
+}
+
+.slide#actions > div > div > div:first-child {
+    height: 120px;
+    width: 120px;
+    position: relative;
+}
+
+.slide#actions > div > div > div:first-child > img  {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+#download > div > img:first-child {
+    transition: top .5s;
+}
+
+#download:hover > div > img:first-child {
+    top: 14px !important;
+}
+
+#documentation > div > img:last-child {
+    height: 120px;
+    width: 120px;
+    transition: height .5s, width .5s, top .5s, left .5s;
+}
+
+#documentation:hover > div > img:last-child {
+    height: 100px !important;
+    width: 100px !important;
+    top: 10px !important;
+    left: 10px !important;
+}
+
+#source > div > div {
+    background: url("../images/actions/code.png");
+    height: 56px;
+    width: 56px;
+    border-radius: 56px;
+    position: absolute;
+    filter: blur(1px);
+    top: 23px !important;
+    left: 15px !important;
+    background-position: -16px 28px;
+    transition: background .5s, left .5s;
+}
+
+#source:hover > div > div {
+    left: 30px !important;
+    background-position: -60px 28px;
+}
+
+
+#source > div > img:last-child {
+    left: 4px !important;
+    transition: left .5s;
+}
+
+#source:hover > div > img:last-child {
+    left: 20px !important;
 }
