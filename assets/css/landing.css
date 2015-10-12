@@ -477,12 +477,11 @@
 }
 
 #pc {
-    background: url("../images/features/computer.png");
     height: 400px;
     position: relative;
 }
 
-#pc > div:first-child {
+#pc > div:last-child {
     height: 119px;
     position: absolute;
     width: 68px;
@@ -490,12 +489,12 @@
     left: 300px;
 }
 
-#pc > div:first-child > img, #pc > div:first-child > div {
+#pc > div:last-child > img, #pc > div:last-child > div {
     position: absolute;
     display: block;
 }
 
-#pc > div:first-child > div:first-child {
+#pc > div:last-child > div:first-child {
     background-image: url("../images/features/steam.png");
     height: 110px;
     width: 49px;
@@ -511,17 +510,23 @@
     }
 }
 
-#pc > div:first-child > img:nth-child(2) {
+#pc > div:last-child > img:nth-child(2) {
     top: 0;
     left: 0;
 }
 
-#pc > div:first-child > img:last-child {
+#pc > div:last-child > img:last-child {
     bottom: 0;
     left: 0;
 }
 
-#pc > div:last-child {
+#pc > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#pc > div:first-child {
     height: 175px;
     width: 332px;
     top: 59px;
@@ -531,7 +536,7 @@
     color: white;
 }
 
-#pc > div:last-child > div {
+#pc > div:first-child > div {
     background: #2c3e50;
     padding: 10px;
     padding: 3px 9px;
@@ -539,28 +544,28 @@
     white-space: pre;
 }
 
-#pc > div:last-child > div::first-letter {
+#pc > div:first-child > div::first-letter {
     color: #5D707A;
     margin-right: 4px;
 }
 
-#pc > div:last-child > div:nth-child(odd) {
+#pc > div:first-child > div:nth-child(odd) {
     background: #34495e;
 }
 
-#pc > div:last-child > div:first-child {
+#pc > div:first-child > div:first-child {
     background: #1C1F20;
     white-space: normal;
     font-family: inherit;
     color: #90909E;
 }
 
-#pc > div:last-child > div:first-child::first-letter {
+#pc > div:first-child > div:first-child::first-letter {
     color: inherit;
     margin-right: 0px;
 }
 
-#pc > div:last-child span {
+#pc > div:first-child span {
     display: inline-block;
     height: 20px;
     margin-top: -1px;

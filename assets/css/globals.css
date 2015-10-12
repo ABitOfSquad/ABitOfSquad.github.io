@@ -70,6 +70,11 @@ nav ul a:last-child li {
     margin: 10px;
     line-height: 40px;
     border-radius: 5px;
+    transition: background .2s;
+}
+
+nav ul a:last-child:hover li {
+    background: #6B6C74;
 }
 
 footer {
