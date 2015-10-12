@@ -117,7 +117,7 @@ window.addEventListener("load", function() {
     window.addEventListener("mousemove", recalculateCursor)
     window.addEventListener("scroll", recalculateCursor)
     window.addEventListener("resize", recalculateCursor)
-    setTimeout(recalculateCursor, 100);
+    setTimeout(function() {recalculateCursor(false)}, 100);
     
     for (var i = 0; i < messages.length; i++) {
         handleMessage(messages[i])

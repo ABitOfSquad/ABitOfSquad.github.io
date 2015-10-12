@@ -194,6 +194,7 @@
 }
 
 .slide#features > div p {
+    text-align: justify;
     font-size: 20px;
     font-weight: lighter;
 }
@@ -216,13 +217,25 @@
 .slide#features > div > div:last-child {
     width: calc(100% - 400px);
     padding: 40px;
+    padding-bottom: 0;
     height: 100%;
     float: right;
 }
 
-
 .slide#features > div:nth-child(even) > div:last-child {
     float: left;
+}
+
+.slide#features > div:first-child > div:last-child {
+    padding-top: 71px;
+}
+
+.slide#features > div:nth-child(2) > div:last-child {
+    padding-top: 91px;
+}
+
+.slide#features > div:last-child > div:last-child {
+    padding-top: 92px;
 }
 
 #innerGears {
@@ -248,7 +261,7 @@
     left: 28%;
     height: 48.016%;
     width: 39.451%;
-    
+
     animation: gearRotate 20s infinite linear;
 }
 
@@ -257,7 +270,7 @@
     left: 64%;
     height: 33%;
     width: 27.1136%;
-    
+
     animation: gearRotate 10s infinite linear reverse;
 }
 
@@ -266,7 +279,7 @@
     left: 70%;
     height: 25%;
     width: 20.5406%;
-    
+
     animation: gearRotate 7s infinite linear;
 }
 
@@ -369,11 +382,12 @@
 
 #spm > div:last-child {
     position: absolute;
+    overflow: hidden;
     background-image: url("../images/features/spm_server.png");
     background-size: contain;
     background-repeat: no-repeat;
     height: 60%;
-    width: 29.9%;
+    width: 29%;
     right: 0;
     padding-top: 5%;
     top: 20%;
@@ -418,7 +432,7 @@
 
 @keyframes blinkingLights {
     0% {background-position: 0 0; }
-    70% {background-position: 0 -12px; }
+    70% {background-position: 0 -11px; }
     100% {background-position: 0 0; }
 }
 
@@ -462,6 +476,118 @@
     border-radius: 0px 0px 10px 10px;
 }
 
+#pc {
+    background: url("../images/features/computer.png");
+    height: 400px;
+    position: relative;
+}
+
+#pc > div:first-child {
+    height: 119px;
+    position: absolute;
+    width: 68px;
+    top: 233px;
+    left: 300px;
+}
+
+#pc > div:first-child > img, #pc > div:first-child > div {
+    position: absolute;
+    display: block;
+}
+
+#pc > div:first-child > div:first-child {
+    background-image: url("../images/features/steam.png");
+    height: 110px;
+    width: 49px;
+    animation: steamScroll 5s infinite linear;
+}
+
+@keyframes steamScroll {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: 0px -68px;
+    }
+}
+
+#pc > div:first-child > img:nth-child(2) {
+    top: 0;
+    left: 0;
+}
+
+#pc > div:first-child > img:last-child {
+    bottom: 0;
+    left: 0;
+}
+
+#pc > div:last-child {
+    height: 175px;
+    width: 332px;
+    top: 59px;
+    left: 34px;
+    position: absolute;
+    background: #2c3e50;
+    color: white;
+}
+
+#pc > div:last-child > div {
+    background: #2c3e50;
+    padding: 10px;
+    padding: 3px 9px;
+    font-family: monospace;
+    white-space: pre;
+}
+
+#pc > div:last-child > div::first-letter {
+    color: #5D707A;
+    margin-right: 4px;
+}
+
+#pc > div:last-child > div:nth-child(odd) {
+    background: #34495e;
+}
+
+#pc > div:last-child > div:first-child {
+    background: #1C1F20;
+    white-space: normal;
+    font-family: inherit;
+    color: #90909E;
+}
+
+#pc > div:last-child > div:first-child::first-letter {
+    color: inherit;
+    margin-right: 0px;
+}
+
+#pc > div:last-child span {
+    display: inline-block;
+    height: 20px;
+    margin-top: -1px;
+    vertical-align: middle;
+    margin-left: 2px;
+    border-color: white;
+    border-left-width: 0px;
+    border-left-style: solid;
+    animation: blinkCursor 2s infinite linear;
+}
+
+@keyframes blinkCursor {
+    0% {
+        border-left-width: 0px;
+    }
+    50% {
+        border-left-width: 0px;
+    }
+    60% {
+
+        border-left-width: 1px;
+    }
+    100% {
+        border-left-width: 0px;
+    }
+}
+
 .slide#reallyDeepQuestions {
     background: #ECECEC;
     font-size: 30px;
@@ -471,23 +597,36 @@
     color: #888888;
 }
 
-.slide#actions > div > div {
-    
+.slide#actions {
+    padding: 20px 0px;
 }
 
-.slide#actions > div > div > div:first-child {
+.slide#actions > div {
+    position: relative;
+}
+
+.slide#actions > div > a {
+    color: inherit;
+}
+
+.slide#actions > div > a > div {
+    position: relative;
+    padding: 20px 0px;
+}
+
+.slide#actions > div > a > div > div:first-child {
     height: 120px;
     width: 120px;
     position: relative;
 }
 
-.slide#actions > div > div > div:first-child > img  {
+.slide#actions > div > a > div > div:first-child > img  {
     top: 0;
     left: 0;
     position: absolute;
 }
 
-#download > div > img:first-child {
+#download > div:first-child > img:first-child {
     transition: top .5s;
 }
 
@@ -495,20 +634,20 @@
     top: 14px !important;
 }
 
-#documentation > div > img:last-child {
+#documentation > div:first-child > img:last-child {
     height: 120px;
     width: 120px;
     transition: height .5s, width .5s, top .5s, left .5s;
 }
 
-#documentation:hover > div > img:last-child {
+#documentation:hover > div:first-child > img:last-child {
     height: 100px !important;
     width: 100px !important;
     top: 10px !important;
     left: 10px !important;
 }
 
-#source > div > div {
+#source > div:first-child > div {
     background: url("../images/actions/code.png");
     height: 56px;
     width: 56px;
@@ -521,17 +660,61 @@
     transition: background .5s, left .5s;
 }
 
-#source:hover > div > div {
+#source:hover > div:first-child > div {
     left: 30px !important;
     background-position: -60px 28px;
 }
 
 
-#source > div > img:last-child {
+#source > div:first-child > img:last-child {
     left: 4px !important;
     transition: left .5s;
 }
 
-#source:hover > div > img:last-child {
+#source:hover > div:first-child > img:last-child {
     left: 20px !important;
+}
+
+.slide#actions > div > a > div > div:last-child {
+    position: absolute;
+    top: 33px;
+    right: 0;
+    text-align: left;
+    width: calc(100% - 200px);
+}
+
+.slide#actions > div > a > div > div:last-child h3 {
+    font-size: 40px;
+    font-weight: lighter;
+    padding: 0;
+    margin: 0;
+}
+
+.slide#actions > div > a > div > div:last-child h5 {
+    font-size: 20px;
+    font-weight: lighter;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+
+#specialThanks {
+    position: absolute;
+    right: 0;
+    top: 70px;
+    width: 200px;
+    text-align: right;
+    color: #BEBEBE;
+}
+
+#specialThanks h5 {
+    font-size: 20px
+}
+
+#specialThanks ul {
+    list-style: none;
+}
+
+#specialThanks ul li {
+    padding: 5px 0;
 }
